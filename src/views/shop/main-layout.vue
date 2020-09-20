@@ -1,27 +1,38 @@
 <template>
-<!--    <div class="loader-wrapper">-->
-<!--      <div>-->
-<!--        <img src="../../assets/images/loader.gif" alt="loader">-->
-<!--      </div>-->
-<!--    </div>-->
- <div>
-   <shop-header/>
-   <div style="height: 500px">
-
-   </div>
-   <shop-footer/>
+ <div class="bg-light">
+     <loader v-if="isLoad"/>
+     <shop-header/>
+     <router-view/>
+     <shop-footer/>
  </div>
 </template>
 
 <script>
 import ShopHeader from './shop-header'
 import ShopFooter from './shop-footer'
+import loader from './loader'
+
 export default {
-  name: "main-layout",
-  components: {
-    ShopHeader,
-    ShopFooter
-  }
+    name: "main-layout",
+    data () {
+        return {
+            isLoad: true,
+        }
+    },
+    components: {
+        ShopHeader,
+        ShopFooter,
+        loader,
+    },
+    mounted() {
+        this.activate()
+
+    },
+    methods: {
+        activate() {
+            setTimeout(() => this.isLoad = false, 1500);
+        }
+    }
 }
 </script>
 

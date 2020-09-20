@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-12">
           <div class="footer-main-contian">
-            <div class="row ">
-              <div class="col-lg-4 col-md-12 ">
+            <div class="row">
+              <div class="col-lg-4 col-md-12 pr-lg-0">
                 <div class="footer-left">
                   <div class="footer-logo">
                     <img src="../../assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
@@ -22,20 +22,20 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-8 col-md-12 ">
+              <div class="col-lg-8 col-md-12 p-l-md-0">
                 <div class="footer-right">
                   <div class="row">
                     <div class="col-md-12">
                       <div class="subscribe-section">
                         <div class="row">
-                          <div class="col-md-5 ">
+                          <div class="col-md-5 pr-lg-0">
                             <div class="subscribe-block">
                               <div class="subscrib-contant ">
                                 <h4>subscribe to newsletter</h4>
                               </div>
                             </div>
                           </div>
-                          <div class="col-md-7 ">
+                          <div class="col-md-7 p-l-md-0">
                             <div class="subscribe-block">
                               <div class="subscrib-contant">
                                 <div class="input-group" >
@@ -137,6 +137,17 @@
                   <li><a href="#"><i class="fa fa-rss" ></i></a></li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="sub-footer-contain">
+              <p><span>2018 - 19 </span>copy right by themeforest powered by pixel strap</p>
             </div>
           </div>
         </div>
