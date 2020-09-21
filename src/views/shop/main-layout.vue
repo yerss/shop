@@ -3,7 +3,11 @@
      <loader v-if="isLoad"/>
      <shop-header/>
      <router-view/>
+     <my-account-component/>
+     <cart-component/>
+     <wishlist-component/>
      <shop-footer/>
+     <product-modal-component/>
  </div>
 </template>
 
@@ -11,6 +15,10 @@
 import ShopHeader from './shop-header'
 import ShopFooter from './shop-footer'
 import loader from './loader'
+import MyAccountComponent from "./my-account-component";
+import CartComponent from "./cart-component";
+import WishlistComponent from "./wishlist-component";
+import ProductModalComponent from "./product-modal-component";
 
 export default {
     name: "main-layout",
@@ -20,6 +28,10 @@ export default {
         }
     },
     components: {
+        ProductModalComponent,
+        WishlistComponent,
+        CartComponent,
+        MyAccountComponent,
         ShopHeader,
         ShopFooter,
         loader,
