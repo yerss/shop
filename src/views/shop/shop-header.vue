@@ -148,9 +148,6 @@
                         <router-link class="dark-menu-item" to="/news">News</router-link>
                       </li>
                       <li>
-                        <router-link class="dark-menu-item" to="/coming_soon">Coming soon</router-link>
-                      </li>
-                      <li>
                         <router-link class="dark-menu-item" to="/about_us">About us</router-link>
                       </li>
                     </ul>
@@ -263,8 +260,65 @@
 </template>
 
 <script>
+import $ from "jquery"
 export default {
-  name: "shop-header"
+  name: "shop-header",
+  mounted() {
+
+    $('.language-dropdown-open').slideUp();
+    $('.language-dropdown-click').on('click', function (){
+      $('.language-dropdown-open').slideToggle()
+    });
+    $('.curroncy-dropdown-open').slideUp();
+    $('.curroncy-dropdown-click').on('click', function (){
+      $('.curroncy-dropdown-open').slideToggle()
+    })
+    $('.pro-up').hide();
+    $('.mor-slide-open').slideUp();
+    $('.mor-slide-click').on('click', function (){
+      $('.mor-slide-open').slideToggle();
+      $('.pro-up').toggle();
+      $('.pro-down').toggle();
+    })
+
+    $('.search-overlay').hide();
+    $('.close-mobile-search').on('click', function (){
+      $('.search-overlay').fadeOut();
+    })
+    $('.mobile-search').on('click', function (){
+      $('.search-overlay').show();
+    })
+
+    $('.sm-nav-btn').on('click', function () {
+      $('.nav-slide').css("left","0px");
+    });
+    $(".nav-sm-back").on('click', function (){
+      $('.nav-slide').css("left","-410px");
+    });
+
+    $('.toggle-nav-desc').on('click', function () {
+      $('.desc-horizontal').css("right","0px");
+    });
+    $(".desc-back").on('click', function (){
+      $('.desc-horizontal').css("right","-410px");
+    });
+    function openNav() {
+      document.getElementById("mySidenav").classList.add('open-side');
+    }
+    function closeNav() {
+      document.getElementById("mySidenav").classList.remove('open-side');
+    }
+    $(function() {
+      $('#main-menu').smartmenus({
+        subMenusSubOffsetX: 1,
+        subMenusSubOffsetY: -8
+      });
+      $('#sub-menu').smartmenus({
+        subMenusSubOffsetX: 1,
+        subMenusSubOffsetY: -8
+      });
+    });
+  }
 }
 </script>
 

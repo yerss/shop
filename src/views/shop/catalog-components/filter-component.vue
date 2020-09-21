@@ -78,8 +78,35 @@
 </template>
 
 <script>
+import $ from "jquery"
+import slick from "../../../assets/js/slick"
+
 export default {
-    name: "filter-component"
+    name: "filter-component",
+  mounted() {
+    $('.slide-1 ').slick({
+      autoplay: false,
+      autoplaySpeed: 2500,
+    });
+    $('.collapse-block-title').on('click', function(e) {
+      e.preventDefault;
+      var speed = 300;
+      var thisItem = $(this).parent(),
+          nextLevel = $(this).next('.collection-collapse-block-content');
+      if (thisItem.hasClass('open')){
+        thisItem.removeClass('open');
+        nextLevel.slideUp(speed);
+      }
+      else {
+        thisItem.addClass('open');
+        nextLevel.slideDown(speed);
+      }
+    });
+    $('.color-selector ul li').on('click', function(e) {
+      $(".color-selector ul li").removeClass("active");
+      $(this).addClass("active");
+    });
+  }
 }
 </script>
 
