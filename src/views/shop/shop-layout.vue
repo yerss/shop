@@ -1,7 +1,6 @@
 <template>
     <body>
         <section>
-        <breadcrumb-component/>
         <section class="section-big-pt-space ratio_asos bg-light">
             <div class="collection-wrapper">
                 <div class="custom-container">
@@ -39,11 +38,9 @@ import TableHeader from './catalog-components/table-header'
 import TableFooter from './catalog-components/table-footer'
 import FilterComponent from './catalog-components/filter-component'
 import NewProductsComponent from './catalog-components/new-products-component'
-import BreadcrumbComponent from "./catalog-components/breadcrumb-component";
 export default {
     name: "shop-layout",
     components: {
-        BreadcrumbComponent,
         NewProductsComponent, FilterComponent, TableFooter, TableHeader, TableComponent, ContentComponent}
 }
 </script>

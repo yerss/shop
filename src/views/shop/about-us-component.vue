@@ -1,6 +1,5 @@
 <template>
     <section>
-        <breadcrumb-component/>
         <section class="about-page section-big-py-space">
             <div class="custom-container">
                 <div class="row">
@@ -110,21 +109,16 @@
                         </div>
                     </div>
                 </section>
-                <shop-services/>
             </div>
         </section>
-
     </section>
 </template>
 
 <script>
-    import BreadcrumbComponent from "./catalog-components/breadcrumb-component";
-    import ShopServices from "./shop-services";
     import $ from 'jquery'
     import slick from '../../assets/js/slick'
     export default {
         name: "about-us-component",
-        components: {ShopServices, BreadcrumbComponent},
         mounted() {
             $('.slide-1 ').slick({
                 autoplay: false,

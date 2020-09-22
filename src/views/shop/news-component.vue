@@ -1,6 +1,5 @@
 <template>
     <section>
-        <breadcrumb-component/>
         <section class="blog-detail-page section-big-py-space ratio2_3">
             <div class="container">
                 <div class="row section-big-pb-space">
@@ -50,10 +49,8 @@
 </template>
 
 <script>
-import BreadcrumbComponent from "./catalog-components/breadcrumb-component";
 export default {
     name: "news-component",
-    components: {BreadcrumbComponent},
     methods: {
         active() {
         }

@@ -2,6 +2,8 @@
  <div class="bg-light">
      <loader v-if="isLoad"/>
      <shop-header/>
+
+   <breadcrumb-component v-if="`${this.$route.path}`!='/'"/>
      <router-view/>
      <my-account-component/>
      <cart-component/>
@@ -19,6 +21,7 @@ import MyAccountComponent from "./my-account-component";
 import CartComponent from "./cart-component";
 import WishlistComponent from "./wishlist-component";
 import ProductModalComponent from "./product-modal-component";
+import BreadcrumbComponent from "@/views/shop/catalog-components/breadcrumb-component";
 
 export default {
     name: "main-layout",
@@ -28,6 +31,7 @@ export default {
         }
     },
     components: {
+      BreadcrumbComponent,
         ProductModalComponent,
         WishlistComponent,
         CartComponent,
