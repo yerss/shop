@@ -77,8 +77,8 @@
                     </li>
                     <li>
                         <div class="buttons">
-                            <a href="cart.html" class="btn btn-normal btn-xs view-cart">view cart</a>
-                            <a href="#" class="btn btn-normal btn-xs checkout">checkout</a>
+                          <router-link to="/cart" class="btn btn-normal btn-xs view-cart">view cart</router-link>
+                          <router-link to="/checkout" class="btn btn-normal btn-xs checkout">checkout</router-link>
                         </div>
                     </li>
                 </ul>

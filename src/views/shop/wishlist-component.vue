@@ -87,7 +87,7 @@
                     </li>
                     <li>
                         <div class="buttons">
-                            <a href="wishlist.html" class="btn btn-normal btn-block  view-cart">view wislist</a>
+                          <router-link to="/wishlist" class="btn btn-normal btn-block  view-cart">view wislist</router-link>
                         </div>
                     </li>
                 </ul>

@@ -23,8 +23,12 @@
                     <a href="#" class="btn btn-rounded btn-block ">Login</a>
                 </div>
                 <div>
-                    <h5 class="forget-class"><a href="forget-pwd.html" class="d-block">forget password?</a></h5>
-                    <h6 class="forget-class"><a href="register.html" class="d-block">new to store? Signup now</a></h6>
+                    <h5 class="forget-class">
+                      <router-link to="/forget_password" class="d-block">forget password?</router-link>
+                    </h5>
+                    <h6 class="forget-class">
+                      <router-link to="/register" class="d-block">new to store? Signup now</router-link>
+                    </h6>
                 </div>
             </form>
         </div>
