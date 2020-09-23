@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="icon-detail">
-            <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+            <button data-toggle="modal" data-target="#addtocart" title="Add to cart" @click="addToCart(product)">
               <i class="ti-bag" ></i>
             </button>
             <a href="javascript:void(0)" title="Add to Wishlist">
@@ -57,6 +57,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   name: "product-component",
   props: {
@@ -68,6 +69,11 @@ export default {
     return {
     }
   },
+  methods: {
+    ...mapActions({
+      addToCart: 'cart/addProduct'
+    })
+  }
 }
 </script>
 

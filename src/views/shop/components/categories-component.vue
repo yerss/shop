@@ -9,7 +9,7 @@
                                 <div class="category-contain">
                                     <a href="#">
                                         <div class="img-wrapper">
-                                            <img src="../../assets/images/layout-1/rounded-cat/1.png" alt="category  " class="img-fluid">
+                                            <img src="../../../assets/images/layout-1/rounded-cat/1.png" alt="category  " class="img-fluid">
                                         </div>
                                         <div>
                                             <div  class="btn-rounded">
@@ -23,7 +23,7 @@
                                 <div class="category-contain">
                                     <a href="#">
                                         <div class="img-wrapper">
-                                            <img src="../../assets/images/layout-1/rounded-cat/2.png" alt="category " class="img-fluid">
+                                            <img src="../../../assets/images/layout-1/rounded-cat/2.png" alt="category " class="img-fluid">
                                         </div>
                                         <div>
                                             <div class="btn-rounded">
@@ -37,7 +37,7 @@
                                 <div class="category-contain">
                                     <a href="#">
                                         <div class="img-wrapper">
-                                            <img src="../../assets/images/layout-1/rounded-cat/3.png" alt="category " class="img-fluid">
+                                            <img src="../../../assets/images/layout-1/rounded-cat/3.png" alt="category " class="img-fluid">
                                         </div>
                                         <div>
                                             <div class="btn-rounded">
@@ -51,7 +51,7 @@
                                 <div class="category-contain">
                                     <a href="#">
                                         <div class="img-wrapper">
-                                            <img src="../../assets/images/layout-1/rounded-cat/4.png" alt="category" class="img-fluid ">
+                                            <img src="../../../assets/images/layout-1/rounded-cat/4.png" alt="category" class="img-fluid ">
                                         </div>
                                         <div>
                                             <div class="btn-rounded">
@@ -65,7 +65,7 @@
                                 <div class="category-contain">
                                     <a href="#">
                                         <div class="img-wrapper">
-                                            <img src="../../assets/images/layout-1/rounded-cat/5.png" alt="category" class="img-fluid ">
+                                            <img src="../../../assets/images/layout-1/rounded-cat/5.png" alt="category" class="img-fluid ">
                                         </div>
                                         <div>
                                             <div class="btn-rounded">
@@ -79,7 +79,7 @@
                                 <div class="category-contain">
                                     <a href="#">
                                         <div class="img-wrapper">
-                                            <img src="../../assets/images/layout-1/rounded-cat/6.png" alt="category" class="img-fluid ">
+                                            <img src="../../../assets/images/layout-1/rounded-cat/6.png" alt="category" class="img-fluid ">
                                         </div>
                                         <div>
                                             <div class="btn-rounded">
@@ -93,7 +93,7 @@
                                 <div class="category-contain">
                                     <a href="#">
                                         <div class="img-wrapper">
-                                            <img src="../../assets/images/layout-1/rounded-cat/7.png" alt="category" class="img-fluid ">
+                                            <img src="../../../assets/images/layout-1/rounded-cat/7.png" alt="category" class="img-fluid ">
                                         </div>
                                         <div>
                                             <div class="btn-rounded">
@@ -113,7 +113,7 @@
 
 <script>
 import $ from 'jquery'
-import slick from '../../assets/js/slick'
+import slick from '../../../assets/js/slick'
 export default {
     name: "categories-component",
     mounted() {

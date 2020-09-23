@@ -79,7 +79,7 @@
 
 <script>
 import $ from "jquery"
-import slick from "../../../assets/js/slick"
+import slick from "../../../../assets/js/slick"
 
 export default {
     name: "filter-component",

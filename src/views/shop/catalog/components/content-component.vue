@@ -1,6 +1,6 @@
 <template>
     <div class="top-banner-wrapper">
-        <a href="#"><img src="../../../assets/images/category/1.jpg" class="img-fluid " alt=""></a>
+        <a href="#"><img src="../../../../assets/images/category/1.jpg" class="img-fluid " alt=""></a>
         <div class="top-banner-content small-section">
             <h4>fashion</h4>
             <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>

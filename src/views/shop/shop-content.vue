@@ -26,7 +26,7 @@
 <script>
 import ShopSlider from "./shop-slider";
 import ShopServices from "./shop-services";
-import CategoriesComponent from "./categories-component";
+import CategoriesComponent from "./components/categories-component";
 import ProductsComponent from "./products-component";
 
 export default {

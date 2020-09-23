@@ -15,13 +15,13 @@
 
 <script>
 import ShopHeader from './shop-header'
-import ShopFooter from './shop-footer'
+import ShopFooter from './components/shop-footer'
 import loader from './loader'
 import MyAccountComponent from "./my-account-component";
-import CartComponent from "./cart-component";
-import WishlistComponent from "./wishlist-component";
+import CartComponent from "./cart/components/cart-component";
+import WishlistComponent from "./wishlist/wishlist-component";
 import ProductModalComponent from "./product-modal-component";
-import BreadcrumbComponent from "@/views/shop/catalog-components/breadcrumb-component";
+import BreadcrumbComponent from "@/views/shop/breadcrumb-component";
 
 export default {
     name: "main-layout",

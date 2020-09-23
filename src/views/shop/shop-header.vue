@@ -61,7 +61,7 @@
                         </div>
                         <div class="cart-block cart-hover-div " @click="openCart()">
                             <div class="cart ">
-                                <span class="cart-product">0</span>
+                                <span class="cart-product">{{count}}</span>
                                 <ul>
                                     <li class="mobile-cart  ">
                                         <a href="#">
@@ -199,13 +199,13 @@
                                                             <div class="row">
                                                                 <div class="col-xl-12">
                                                                     <form>
-                                                                        <div class="form-group"><input type="text"
-                                                                                                       class="form-control"
-                                                                                                       id="exampleInputPassword1"
-                                                                                                       placeholder="Search a Product">
+                                                                        <div class="form-group">
+                                                                          <input type="text" class="form-control"
+                                                                                 id="exampleInputPassword1"
+                                                                                 placeholder="Search a Product">
                                                                         </div>
-                                                                        <button type="submit" class="btn btn-primary"><i
-                                                                                class="fa fa-search"></i></button>
+                                                                        <button type="submit" class="btn btn-primary">
+                                                                          <i class="fa fa-search"></i></button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -303,12 +303,12 @@
 </template>
 
 <script>
-    import $ from "jquery"
-    import smartmenu from '../../assets/js/menu'
-    export default {
+import $ from "jquery"
+import smartmenu from '../../assets/js/menu'
+import {mapGetters} from 'vuex'
+export default{
         name: "shop-header",
         mounted() {
-
             $('.language-dropdown-open').slideUp();
             $('.language-dropdown-click').on('click', function () {
                 $('.language-dropdown-open').slideToggle()
@@ -377,6 +377,11 @@
             openAccount() {
                 document.getElementById("myAccount").classList.add('open-side');
             },
+        },
+        computed: {
+          ...mapGetters({
+            count: 'cart/products_count'
+          })
         }
     }
 </script>

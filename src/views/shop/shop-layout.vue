@@ -32,12 +32,12 @@
 </template>
 
 <script>
-import ContentComponent from './catalog-components/content-component'
-import TableComponent from './catalog-components/table-component'
-import TableHeader from './catalog-components/table-header'
-import TableFooter from './catalog-components/table-footer'
-import FilterComponent from './catalog-components/filter-component'
-import NewProductsComponent from './catalog-components/new-products-component'
+import ContentComponent from './catalog/components/content-component'
+import TableComponent from './catalog/components/table-component'
+import TableHeader from './catalog/components/table-header'
+import TableFooter from './catalog/components/table-footer'
+import FilterComponent from './catalog/components/filter-component'
+import NewProductsComponent from './catalog/components/new-products-component'
 export default {
     name: "shop-layout",
     components: {

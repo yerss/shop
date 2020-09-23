@@ -1,0 +1,53 @@
+<template>
+  <tbody>
+  <tr>
+    <td>
+      <a href="#"><img :src="product.url" alt="cart"  class=" "></a>
+    </td>
+    <td><a href="#">{{ product.name }}</a>
+      <div class="mobile-cart-content row">
+        <div class="col-xs-3">
+          <div class="qty-box">
+            <div class="input-group">
+              <input type="text" name="quantity" class="form-control input-number" >
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <h2 class="td-color">a</h2></div>
+        <div class="col-xs-3">
+          <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
+      </div>
+    </td>
+    <td>
+      <h2>$ {{product.price}}</h2></td>
+    <td>
+      <div class="qty-box">
+        <div class="input-group">
+          <input type="number" name="quantity" class="form-control input-number" v-model="product.quantity">
+        </div>
+      </div>
+    </td>
+    <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
+    <td>
+      <h2 class="td-color">$ {{product.quantity * product.price}}</h2></td>
+  </tr>
+  </tbody>
+</template>
+
+<script>
+import {mapActions} from 'vuex'
+export default {
+  name: "product-component",
+  props: {
+    product: {
+      type: Object
+    }
+  }
+
+}
+</script>
+
+<style scoped>
+
+</style>

@@ -8,16 +8,16 @@
               <div class="col-lg-4 col-md-12 pr-lg-0">
                 <div class="footer-left">
                   <div class="footer-logo">
-                    <img src="../../assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
+                    <img src="../../../assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
                   </div>
                   <div class="footer-detail">
                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
                     <ul class="paymant-bottom">
-                      <li><a href="#"><img src="../../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../assets/images/layout-1/pay/3.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../assets/images/layout-1/pay/4.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../assets/images/layout-1/pay/5.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/3.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/4.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/5.png" class="img-fluid" alt="pay"></a></li>
                     </ul>
                   </div>
                 </div>
@@ -120,10 +120,10 @@
           <div class="app-link-bloc-contain app-link-bloc-contain-1">
             <div class="app-item-group">
               <div class="app-item">
-                <img src="../../assets/images/layout-1/app/1.png" class="img-fluid" alt="app-banner">
+                <img src="../../../assets/images/layout-1/app/1.png" class="img-fluid" alt="app-banner">
               </div>
               <div class="app-item">
-                <img src="../../assets/images/layout-1/app/2.png" class="img-fluid" alt="app-banner">
+                <img src="../../../assets/images/layout-1/app/2.png" class="img-fluid" alt="app-banner">
               </div>
             </div>
             <div class="app-item-group ">

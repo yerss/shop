@@ -4,7 +4,7 @@
             <div class="custom-container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="banner-section"><img src="../../assets/images/blog/1.jpg" class="img-fluid   w-100" alt=""></div>
+                        <div class="banner-section"><img src="../../../assets/images/blog/1.jpg" class="img-fluid   w-100" alt=""></div>
                     </div>
                     <div class="col-lg-6">
                         <h4>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</h4>
@@ -25,7 +25,7 @@
                                 <div class="testimonial-contain">
                                     <div class="media">
                                         <div class="testimonial-img">
-                                            <img src="../../assets/images/testimonial/1.jpg" class="img-fluid rounded-circle  " alt="testimonial">
+                                            <img src="../../../assets/images/testimonial/1.jpg" class="img-fluid rounded-circle  " alt="testimonial">
                                         </div>
                                         <div class="media-body">
                                             <h5>mark jecno</h5>
@@ -38,7 +38,7 @@
                                 <div class="testimonial-contain">
                                     <div class="media">
                                         <div class="testimonial-img">
-                                            <img src="../../assets/images/testimonial/2.jpg" class="img-fluid rounded-circle" alt="testimonial">
+                                            <img src="../../../assets/images/testimonial/2.jpg" class="img-fluid rounded-circle" alt="testimonial">
                                         </div>
                                         <div class="media-body">
                                             <h5>mark jecno</h5>
@@ -51,7 +51,7 @@
                                 <div class="testimonial-contain">
                                     <div class="media">
                                         <div class="testimonial-img">
-                                            <img src="../../assets/images/testimonial/3.jpg" class="img-fluid rounded-circle" alt="testimonial">
+                                            <img src="../../../assets/images/testimonial/3.jpg" class="img-fluid rounded-circle" alt="testimonial">
                                         </div>
                                         <div class="media-body">
                                             <h5>mark jecno</h5>
@@ -71,35 +71,35 @@
                                 <div class="team-4">
                                     <div>
                                         <div>
-                                            <img src="../../assets/images/about/team/1.jpg" class="img-fluid  bg-img" alt="team">
+                                            <img src="../../../assets/images/about/team/1.jpg" class="img-fluid  bg-img" alt="team">
                                         </div>
                                         <h4>Hileri Keol</h4>
                                         <h6>CEo & Founder At Company</h6>
                                     </div>
                                     <div>
                                         <div>
-                                            <img src="../../assets/images/about/team/2.jpg" class="img-fluid  bg-img" alt="team">
+                                            <img src="../../../assets/images/about/team/2.jpg" class="img-fluid  bg-img" alt="team">
                                         </div>
                                         <h4>Hileri Keol</h4>
                                         <h6>CEo & Founder At Company</h6>
                                     </div>
                                     <div>
                                         <div>
-                                            <img src="../../assets/images/about/team/3.jpg" class="img-fluid  bg-img" alt="team">
+                                            <img src="../../../assets/images/about/team/3.jpg" class="img-fluid  bg-img" alt="team">
                                         </div>
                                         <h4>Hileri Keol</h4>
                                         <h6>CEo & Founder At Company</h6>
                                     </div>
                                     <div>
                                         <div>
-                                            <img src="../../assets/images/about/team/4.jpg" class="img-fluid  bg-img" alt="team">
+                                            <img src="../../../assets/images/about/team/4.jpg" class="img-fluid  bg-img" alt="team">
                                         </div>
                                         <h4>Hileri Keol</h4>
                                         <h6>CEo & Founder At Company</h6>
                                     </div>
                                     <div>
                                         <div>
-                                            <img src="../../assets/images/about/team/5.jpg" class="img-fluid  bg-img" alt="team">
+                                            <img src="../../../assets/images/about/team/5.jpg" class="img-fluid  bg-img" alt="team">
                                         </div>
                                         <h4>Hileri Keol</h4>
                                         <h6>CEo & Founder At Company</h6>
@@ -116,7 +116,7 @@
 
 <script>
     import $ from 'jquery'
-    import slick from '../../assets/js/slick'
+    import slick from '../../../assets/js/slick'
     export default {
         name: "about-us-component",
         mounted() {

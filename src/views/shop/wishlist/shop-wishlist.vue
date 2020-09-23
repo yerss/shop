@@ -16,7 +16,7 @@
             <tbody>
             <tr>
               <td>
-                <a href="#"><img src="../../assets/images/layout-2/product/1.jpg" alt="product" class="img-fluid  "></a>
+                <a href="#"><img src="../../../assets/images/layout-2/product/1.jpg" alt="product" class="img-fluid  "></a>
               </td>
               <td><a href="#">cotton shirt</a>
                 <div class="mobile-cart-content row">
@@ -40,7 +40,7 @@
             <tbody>
             <tr>
               <td>
-                <a href="#"><img src="../../assets/images/layout-2/product/2.jpg" alt="product" class="img-fluid  "></a>
+                <a href="#"><img src="../../../assets/images/layout-2/product/2.jpg" alt="product" class="img-fluid  "></a>
               </td>
               <td><a href="#">cotton shirt</a>
                 <div class="mobile-cart-content row">
@@ -64,7 +64,7 @@
             <tbody>
             <tr>
               <td>
-                <a href="#"><img src="../../assets/images/layout-1/product/3.jpg" alt="product" class="img-fluid  "></a>
+                <a href="#"><img src="../../../assets/images/layout-1/product/3.jpg" alt="product" class="img-fluid  "></a>
               </td>
               <td><a href="#">cotton shirt</a>
                 <div class="mobile-cart-content row">

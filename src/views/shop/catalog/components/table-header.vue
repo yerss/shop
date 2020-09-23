@@ -18,10 +18,10 @@
                     </div>
                     <div class="collection-grid-view">
                         <ul>
-                            <li><img src="../../../assets/images/category/icon/2.png" alt="" class="product-2-layout-view"></li>
-                            <li><img src="../../../assets/images/category/icon/3.png" alt="" class="product-3-layout-view"></li>
-                            <li><img src="../../../assets/images/category/icon/4.png" alt="" class="product-4-layout-view"></li>
-                            <li><img src="../../../assets/images/category/icon/6.png" alt="" class="product-6-layout-view"></li>
+                            <li><img src="../../../../assets/images/category/icon/2.png" alt="" class="product-2-layout-view"></li>
+                            <li><img src="../../../../assets/images/category/icon/3.png" alt="" class="product-3-layout-view"></li>
+                            <li><img src="../../../../assets/images/category/icon/4.png" alt="" class="product-4-layout-view"></li>
+                            <li><img src="../../../../assets/images/category/icon/6.png" alt="" class="product-6-layout-view"></li>
                         </ul>
                     </div>
                     <div class="product-page-per-view">
