@@ -12,77 +12,16 @@
             </div>
             <div class="cart_media">
                 <ul class="cart_product">
-                    <li>
-                        <div class="media">
-                            <a href="#">
-                                <img alt="" class="mr-3" src="../../../assets/images/layout-1/media-banner/1.jpg">
-                            </a>
-                            <div class="media-body">
-                                <a href="#">
-                                    <h4>item name</h4>
-                                </a>
-                                <h4>
-                                    <span>sm</span>
-                                    <span>, blue</span>
-                                </h4>
-                                <h4>
-                                    <span>$ 299.00</span>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="close-circle">
-                            <a href="#">
-                                <i class="ti-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="media">
-                            <a href="#">
-                                <img alt="" class="mr-3" src="../../../assets/images/layout-1/media-banner/2.jpg">
-                            </a>
-                            <div class="media-body">
-                                <a href="#">
-                                    <h4>item name</h4>
-                                </a>
-                                <h4>
-                                    <span>sm</span>
-                                    <span>, blue</span>
-                                </h4>
-                                <h4>
-                                    <span>$ 299.00</span>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="close-circle">
-                            <a href="#">
-                                <i class="ti-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="media">
-                            <a href="#"><img alt="" class="mr-3" src="../../../assets/images/layout-1/media-banner/3.jpg"></a>
-                            <div class="media-body">
-                                <a href="#"><h4>item name</h4></a>
-                                <h4>
-                                    <span>sm</span>
-                                    <span>, blue</span>
-                                </h4>
-                                <h4><span>$ 299.00</span></h4>
-                            </div>
-                        </div>
-                        <div class="close-circle">
-                            <a href="#">
-                                <i class="ti-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
+                    <product-sidebar
+                        v-for="(p, index) in products"
+                        :product="p"
+                        :key="index"
+                    />
                 </ul>
                 <ul class="cart_total">
                     <li>
                         <div class="total">
-                            <h5>subtotal : <span>$299.00</span></h5>
+                            <h5>subtotal : <span>$ {{total}}</span></h5>
                         </div>
                     </li>
                     <li>
@@ -97,14 +36,27 @@
 </template>
 
 <script>
-    export default {
-        name: "wishlist-component",
-        methods: {
-            closeWishlist() {
-                document.getElementById("wishlist_side").classList.remove('open-side');
-            },
-        }
+import ProductSidebar from "@/views/shop/cart/components/product-sidebar";
+import {mapGetters} from "vuex";
+export default {
+  name: "wishlist-component",
+  components: {ProductSidebar},
+  methods: {
+    closeWishlist() {
+      document.getElementById("wishlist_side").classList.remove('open-side');
+    },
+  },
+  computed: {
+    ...mapGetters({
+      products: 'wishlist/products'
+    }),
+    total () {
+      return Math.round(this.products.reduce((accumulator, currentValue) => {
+        return accumulator + (currentValue.price)
+      }, 0))
     }
+  }
+}
 </script>
 
 <style scoped>

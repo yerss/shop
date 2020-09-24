@@ -61,7 +61,7 @@
                         </div>
                         <div class="cart-block cart-hover-div " @click="openCart()">
                             <div class="cart ">
-                                <span class="cart-product">{{count}}</span>
+                                <span class="cart-product">{{cart_count}}</span>
                                 <ul>
                                     <li class="mobile-cart  ">
                                         <a href="#">
@@ -152,7 +152,7 @@
                                         <li class="mobile-wishlist" @click="openWishlist()">
                                             <a><i class="icon-heart"></i>
                                                 <div class="cart-item">
-                                                    <div>0 item<span>wishlist</span></div>
+                                                    <div>{{count_wishlist}} item<span>wishlist</span></div>
                                                 </div>
                                             </a></li>
                                         <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>
@@ -348,7 +348,8 @@ export default{
         },
         computed: {
           ...mapGetters({
-            count: 'cart/products_count'
+            cart_count: 'cart/products_count',
+            count_wishlist: 'wishlist/products_count',
           })
         }
     }
