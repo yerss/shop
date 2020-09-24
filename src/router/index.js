@@ -59,12 +59,20 @@ let router = new Router({
                 {
                     path: 'cart',
                     name: 'cart',
-                    component: ShopCart
+                    component: ShopCart,
+                    beforeEnter: (to, from, next) => {
+                        document.getElementById("cart_side").classList.remove('open-side')
+                        next()
+                    }
                 },
                 {
                     path: 'wishlist',
                     name: 'wishlist',
-                    component: ShopWishlist
+                    component: ShopWishlist,
+                    beforeEnter: (to, from, next) => {
+                        document.getElementById("wishlist_side").classList.remove('open-side')
+                        next()
+                    }
                 },
                 {
                     path: 'checkout',

@@ -1,15 +1,14 @@
 <template>
- <div class="bg-light">
-     <loader v-if="isLoad"/>
-     <shop-header/>
-
-   <breadcrumb-component v-if="`${this.$route.path}`!='/'"/>
-     <router-view/>
-     <my-account-component/>
-     <cart-component/>
-     <wishlist-component/>
-     <shop-footer/>
-     <product-modal-component/>
+  <div class="bg-light">
+    <loader v-if="isLoad"/>
+    <shop-header/>
+    <breadcrumb-component v-if="`${this.$route.path}`!='/'"/>
+    <router-view/>
+    <my-account-component/>
+    <cart-component/>
+    <wishlist-component/>
+    <shop-footer/>
+    <product-modal-component/>
  </div>
 </template>
 
@@ -31,7 +30,7 @@ export default {
         }
     },
     components: {
-      BreadcrumbComponent,
+        BreadcrumbComponent,
         ProductModalComponent,
         WishlistComponent,
         CartComponent,
