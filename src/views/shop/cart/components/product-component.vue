@@ -9,12 +9,12 @@
         <div class="col-xs-3">
           <div class="qty-box">
             <div class="input-group">
-              <input type="text" name="quantity" class="form-control input-number" >
+              <input type="text" name="quantity" class="form-control input-number" v-model="product.quantity">
             </div>
           </div>
         </div>
         <div class="col-xs-3">
-          <h2 class="td-color">a</h2></div>
+          <h2 class="td-color">$ {{product.price}}</h2></div>
         <div class="col-xs-3">
           <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
       </div>

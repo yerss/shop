@@ -18,7 +18,7 @@
       <tr>
         <td>total price :</td>
         <td>
-          <h2>$ {{total}}</h2></td>
+          <h2>$ {{ total }}</h2></td>
       </tr>
       </tfoot>
     </table>
@@ -36,7 +36,9 @@ name: "table-component",
       products: 'cart/products'
     }),
     total () {
-      return 10
+      return Math.round(this.products.reduce((accumulator, currentValue) => {
+        return accumulator + (currentValue.quantity * currentValue.price)
+      }, 0))
     }
   }
 }

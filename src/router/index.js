@@ -4,14 +4,14 @@ import Router from 'vue-router'
 const AdminMainComponent = () => import('@/views/admin/main-layout')
 const MainComponent = () => import('@/views/shop/main-layout')
 const ShopContent = () => import('@/views/shop/shop-content')
-const ShopCatalog = () => import('@/views/shop/shop-layout')
+const ShopCatalog = () => import('@/views/shop/catalog/shop-layout')
 const ShopRegister = () => import('@/views/shop/shop-register')
 const ShopForgetPassword = () => import('@/views/shop/shop-forget-password')
 const ShopCart = () => import('@/views/shop/cart/shop-cart')
 const ShopWishlist = () => import('@/views/shop/wishlist/shop-wishlist')
 const ShopCheckout = () => import('@/views/shop/checkout/shop-checkout')
 const AboutUsComponent = () => import('@/views/shop/components/about-us-component')
-const NewsComponent = () => import('@/views/shop/news-component')
+const NewsComponent = () => import('@/views/shop/news/news-component')
 Vue.use(Router)
 
 let router = new Router({

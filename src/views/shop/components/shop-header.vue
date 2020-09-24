@@ -44,7 +44,7 @@
                         </div>
                         <div class="logo-block">
                             <router-link to="/">
-                                <img src="../../assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
+                                <img src="../../../assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
                             </router-link>
                         </div>
                         <div class="input-block">
@@ -101,45 +101,10 @@
                                         </nav>
                                         <div class="collapse  nav-desk" id="navbarToggleExternalContent">
                                             <ul class="nav-cat title-font">
-                                                <li><img src="../../assets/images/layout-1/nav-img/01.png"
-                                                         alt="category-product"> <a href="#">western ware</a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/02.png"
-                                                         alt="category-product"> <a href="#">TV, Appliances</a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/03.png"
-                                                         alt="category-product"> <a href="#">Pets Products</a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/04.png"
-                                                         alt="category-product"> <a href="#">Car, Motorbike</a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/05.png"
-                                                         alt="category-product"> <a href="#">Industrial Products</a>
-                                                </li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/06.png"
-                                                         alt="category-product"> <a href="#">Beauty, Health Products</a>
-                                                </li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/07.png"
-                                                         alt="category-product"> <a href="#">Grocery Products </a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/08.png"
-                                                         alt="category-product"> <a href="#">Sports</a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/09.png"
-                                                         alt="category-product"> <a href="#">Bags, Luggage</a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/10.png"
-                                                         alt="category-product"> <a href="#">Movies, Music </a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/11.png"
-                                                         alt="category-product"> <a href="#">Video Games</a></li>
-                                                <li><img src="../../assets/images/layout-1/nav-img/12.png"
-                                                         alt="category-product"> <a href="#">Toys, Baby Products</a>
-                                                </li>
                                                 <li>
+                                                    <category-navbar/>
                                                     <ul class="mor-slide-open">
-                                                        <li><img src="../../assets/images/layout-1/nav-img/08.png"
-                                                                 alt="category-product"> <a>Sports</a></li>
-                                                        <li><img src="../../assets/images/layout-1/nav-img/09.png"
-                                                                 alt="category-product"> <a>Bags, Luggage</a></li>
-                                                        <li><img src="../../assets/images/layout-1/nav-img/10.png"
-                                                                 alt="category-product"> <a>Movies, Music </a></li>
-                                                        <li><img src="../../assets/images/layout-1/nav-img/11.png"
-                                                                 alt="category-product"> <a>Video Games</a></li>
-                                                        <li><img src="../../assets/images/layout-1/nav-img/12.png"
-                                                                 alt="category-product"> <a>Toys, Baby Products</a></li>
+                                                        <category-navbar/>
                                                     </ul>
                                                 </li>
                                                 <li>
@@ -240,29 +205,29 @@
                                     <div class="dropdown-menu gift-dropdown">
                                         <div class="media">
                                             <div class="mr-3">
-                                                <img src="../../assets/images/icon/1.png"
+                                                <img src="../../../assets/images/icon/1.png"
                                                      alt="Generic placeholder image">
                                             </div>
                                             <div class="media-body">
                                                 <h5 class="mt-0">Billion Days</h5>
-                                                <p><img src="../../assets/images/icon/currency.png" class="cash"
+                                                <p><img src="../../../assets/images/icon/currency.png" class="cash"
                                                         alt="curancy"> Flat Rs. 270 Rewards</p>
                                             </div>
                                         </div>
                                         <div class="media">
                                             <div class="mr-3">
-                                                <img src="../../assets/images/icon/2.png"
+                                                <img src="../../../assets/images/icon/2.png"
                                                      alt="Generic placeholder image" class="gift-bloc">
                                             </div>
                                             <div class="media-body">
                                                 <h5 class="mt-0">Fashion Discount</h5>
-                                                <p><img src="../../assets/images/icon/fire.png" class="fire" alt="fire">Extra
+                                                <p><img src="../../../assets/images/icon/fire.png" class="fire" alt="fire">Extra
                                                     10% off (upto Rs. 10,000*) </p>
                                             </div>
                                         </div>
                                         <div class="media">
                                             <div class="mr-3">
-                                                <img src="../../assets/images/icon/3.png"
+                                                <img src="../../../assets/images/icon/3.png"
                                                      alt="Generic placeholder image">
                                             </div>
                                             <div class="media-body">
@@ -272,7 +237,7 @@
                                         </div>
                                         <div class="media">
                                             <div class="mr-3">
-                                                <img src="../../assets/images/icon/6.png"
+                                                <img src="../../../assets/images/icon/6.png"
                                                      alt="Generic placeholder image">
                                             </div>
                                             <div class="media-body">
@@ -282,12 +247,12 @@
                                         </div>
                                         <div class="media">
                                             <div class="mr-3">
-                                                <img src="../../assets/images/icon/5.png"
+                                                <img src="../../../assets/images/icon/5.png"
                                                      alt="Generic placeholder image">
                                             </div>
                                             <div class="media-body">
                                                 <h5 class="mt-0">Beauty store</h5>
-                                                <p><img src="../../assets/images/icon/currency.png" class="cash"
+                                                <p><img src="../../../assets/images/icon/currency.png" class="cash"
                                                         alt="curancy"> Flat Rs. 270 Rewards</p>
                                             </div>
                                         </div>
@@ -304,11 +269,14 @@
 
 <script>
 import $ from "jquery"
-import smartmenu from '../../assets/js/menu'
+import smartmenu from '../../../assets/js/menu'
 import {mapGetters} from 'vuex'
+import ProductSidebar from "@/views/shop/cart/components/product-sidebar";
+import CategoryNavbar from "@/views/shop/categories/components/category-navbar";
 export default{
         name: "shop-header",
-        mounted() {
+  components: {CategoryNavbar, ProductSidebar},
+  mounted() {
             $('.language-dropdown-open').slideUp();
             $('.language-dropdown-click').on('click', function () {
                 $('.language-dropdown-open').slideToggle()

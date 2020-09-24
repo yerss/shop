@@ -24,9 +24,9 @@
 </template>
 
 <script>
-import ShopSlider from "./shop-slider";
-import ShopServices from "./shop-services";
-import CategoriesComponent from "./components/categories-component";
+import ShopSlider from "./components/shop-slider";
+import ShopServices from "./components/shop-services";
+import CategoriesComponent from "./categories/categories-component";
 import ProductsComponent from "./special-products/products-component";
 
 export default {
