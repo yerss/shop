@@ -56,7 +56,7 @@ const mutations = {
         state.products = data
     },
     addProduct(state, product) {
-        state.product = product
+        state.products.push(product)
     },
     deleteProduct(state, id) {
         const products = [...state.products]
