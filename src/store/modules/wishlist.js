@@ -48,7 +48,7 @@ const getters = {
 }
 
 const actions = {
-
+    //delete product
 }
 
 const mutations = {

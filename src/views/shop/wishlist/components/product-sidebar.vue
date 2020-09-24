@@ -13,13 +13,14 @@
         </h4>
       </div>
     </div>
-    <div class="close-circle" @click="deleteItem()" style="cursor:pointer;">
-        <i class="ti-trash" aria-hidden="true" ></i>
+    <div class="close-circle" style="cursor: pointer" @click="deleteItem()">
+      <i class="ti-trash" aria-hidden="true"></i>
     </div>
   </li>
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 export default {
   name: "product-sidebar",
   props: {
@@ -29,8 +30,11 @@ export default {
   },
   methods: {
     deleteItem() {
-      this.$store.commit("cart/deleteProduct", this.product.id)
-    }
+      this.$store.commit("wishlist/deleteProduct", this.product.id)
+    },
+    ...mapActions({
+      // implement delete method for wishlist
+    })
   }
 }
 </script>

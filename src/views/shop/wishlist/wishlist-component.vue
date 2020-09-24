@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import ProductSidebar from "@/views/shop/cart/components/product-sidebar";
+import ProductSidebar from "@/views/shop/wishlist/components/product-sidebar";
 import {mapGetters} from "vuex";
 export default {
   name: "wishlist-component",

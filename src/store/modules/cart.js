@@ -47,6 +47,7 @@ const mutations = {
         cartItem.quantity+=1
     },
     deleteProduct(state, id) {
+        console.log(id)
         const products = [...state.products]
         const index = products.findIndex(p => p.id === id)
         if (index > -1) {

@@ -16,7 +16,7 @@
         <div class="col-xs-3">
           <h2 class="td-color">$ {{product.price}}</h2></div>
         <div class="col-xs-3">
-          <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
+          <h2 class="td-color" @click="deleteItem()"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
       </div>
     </td>
     <td>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </td>
-    <td><a href="#" class="icon"><i class="ti-close"></i></a></td>
+    <td @click="deleteItem()"><a href="#" class="icon"><i class="ti-close"></i></a></td>
     <td>
       <h2 class="td-color">$ {{product.quantity * product.price}}</h2></td>
   </tr>
@@ -42,6 +42,11 @@ export default {
   props: {
     product: {
       type: Object
+    }
+  },
+  methods: {
+    deleteItem() {
+      this.$store.commit("cart/deleteProduct", this.product.id)
     }
   }
 

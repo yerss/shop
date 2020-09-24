@@ -81,6 +81,7 @@ let router = new Router({
                 }
             ]
         },
+
     ]
 })
 

@@ -34,7 +34,7 @@
           <p>in stock</p>
           </td>
           <td>
-            <a href="#" class="icon mr-3"><i class="ti-close"></i> </a>
+            <a href="#" class="icon mr-3" @click="deleteItem(p.id)"><i class="ti-close"></i> </a>
             <a href="#" class="cart" @click="addToCart(p)"><i class="ti-shopping-cart"></i> </a>
           </td>
     </tr>
@@ -55,7 +55,10 @@ export default {
   methods: {
     ...mapActions({
       addToCart: 'cart/addProduct'
-    })
+    }),
+    deleteItem(id) {
+      this.$store.commit("wishlist/deleteProduct", id)
+    }
   }
 }
 </script>
