@@ -1,27 +1,53 @@
 <template>
-<!--    <div class="loader-wrapper">-->
-<!--      <div>-->
-<!--        <img src="../../assets/images/loader.gif" alt="loader">-->
-<!--      </div>-->
-<!--    </div>-->
- <div>
-   <shop-header/>
-   <div style="height: 500px">
-
-   </div>
-   <shop-footer/>
+  <div class="bg-light">
+    <loader v-if="isLoad"/>
+    <shop-header/>
+    <breadcrumb-component v-if="`${this.$route.path}`!='/'"/>
+    <router-view/>
+    <my-account-component/>
+    <cart-component/>
+    <wishlist-component/>
+    <shop-footer/>
+    <product-modal-component/>
  </div>
 </template>
 
 <script>
-import ShopHeader from './shop-header'
-import ShopFooter from './shop-footer'
+import ShopHeader from './components/shop-header'
+import ShopFooter from './components/shop-footer'
+import loader from './loader'
+import MyAccountComponent from "./my-account-component";
+import CartComponent from "./cart/components/cart-component";
+import WishlistComponent from "./wishlist/wishlist-component";
+import ProductModalComponent from "./components/product-modal-component";
+import BreadcrumbComponent from "@/views/shop/components/breadcrumb-component";
+
 export default {
-  name: "main-layout",
-  components: {
-    ShopHeader,
-    ShopFooter
-  }
+    name: "main-layout",
+    data () {
+        return {
+            isLoad: true,
+        }
+    },
+    components: {
+        BreadcrumbComponent,
+        ProductModalComponent,
+        WishlistComponent,
+        CartComponent,
+        MyAccountComponent,
+        ShopHeader,
+        ShopFooter,
+        loader,
+    },
+    mounted() {
+        this.activate()
+
+    },
+    methods: {
+        activate() {
+            setTimeout(() => this.isLoad = false, 1500);
+        }
+    }
 }
 </script>
 
