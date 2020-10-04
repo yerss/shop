@@ -1,27 +1,26 @@
 <template>
- <div class="bg-light">
-     <loader v-if="isLoad"/>
-     <shop-header/>
-
-   <breadcrumb-component v-if="`${this.$route.path}`!='/'"/>
-     <router-view/>
-     <my-account-component/>
-     <cart-component/>
-     <wishlist-component/>
-     <shop-footer/>
-     <product-modal-component/>
+  <div class="bg-light">
+    <loader v-if="isLoad"/>
+    <shop-header/>
+    <breadcrumb-component v-if="`${this.$route.path}`!='/'"/>
+    <router-view/>
+    <my-account-component/>
+    <cart-component/>
+    <wishlist-component/>
+    <shop-footer/>
+    <product-modal-component/>
  </div>
 </template>
 
 <script>
-import ShopHeader from './shop-header'
+import ShopHeader from './components/shop-header'
 import ShopFooter from './components/shop-footer'
 import loader from './loader'
 import MyAccountComponent from "./my-account-component";
 import CartComponent from "./cart/components/cart-component";
 import WishlistComponent from "./wishlist/wishlist-component";
-import ProductModalComponent from "./product-modal-component";
-import BreadcrumbComponent from "@/views/shop/breadcrumb-component";
+import ProductModalComponent from "./components/product-modal-component";
+import BreadcrumbComponent from "@/views/shop/components/breadcrumb-component";
 
 export default {
     name: "main-layout",
@@ -31,7 +30,7 @@ export default {
         }
     },
     components: {
-      BreadcrumbComponent,
+        BreadcrumbComponent,
         ProductModalComponent,
         WishlistComponent,
         CartComponent,

@@ -7,13 +7,11 @@
                     <div class="row">
                         <div class="col-sm-3 collection-filter category-page-side">
                             <filter-component/>
-                            <new-products-component/>
                         </div>
                         <div class="collection-content col">
                             <div class="page-main-content">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <content-component/>
                                         <div class="collection-product-wrapper">
                                             <table-header/>
                                             <table-component/>
@@ -32,16 +30,15 @@
 </template>
 
 <script>
-import ContentComponent from './catalog/components/content-component'
-import TableComponent from './catalog/components/table-component'
-import TableHeader from './catalog/components/table-header'
-import TableFooter from './catalog/components/table-footer'
-import FilterComponent from './catalog/components/filter-component'
-import NewProductsComponent from './catalog/components/new-products-component'
+import TableComponent from './components/table-component'
+import TableHeader from './components/table-header'
+import TableFooter from './components/table-footer'
+import FilterComponent from './components/filter-component'
+import NewProductsComponent from './components/new-products-component'
 export default {
     name: "shop-layout",
     components: {
-        NewProductsComponent, FilterComponent, TableFooter, TableHeader, TableComponent, ContentComponent}
+        NewProductsComponent, FilterComponent, TableFooter, TableHeader, TableComponent}
 }
 </script>
 

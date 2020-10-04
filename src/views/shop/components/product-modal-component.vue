@@ -6,7 +6,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <div class="row">
                         <div class="col-lg-6 col-xs-12">
-                            <div class="quick-view-img"><img src="../../assets/images/layout-2/product/a1.jpg" alt="" class="img-fluid "></div>
+                            <div class="quick-view-img"><img src="../../../assets/images/layout-2/product/a1.jpg" alt="" class="img-fluid "></div>
                         </div>
                         <div class="col-lg-6 rtl-text">
                             <div class="product-right">

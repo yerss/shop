@@ -12,67 +12,16 @@
             </div>
             <div class="cart_media">
                 <ul class="cart_product">
-                    <li>
-                        <div class="media">
-                            <a href="#">
-                                <img alt="" class="mr-3" src="../../../../assets/images/layout-2/product/1.jpg">
-                            </a>
-                            <div class="media-body">
-                                <a href="#">
-                                    <h4>item name</h4>
-                                </a>
-                                <h4>
-                                    <span>1 x $ 299.00</span>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="close-circle">
-                            <a href="#">
-                                <i class="ti-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="media">
-                            <a href="#">
-                                <img alt="" class="mr-3" src="../../../../assets/images/layout-2/product/a1.jpg">
-                            </a>
-                            <div class="media-body">
-                                <a href="#">
-                                    <h4>item name</h4>
-                                </a>
-                                <h4>
-                                    <span>1 x $ 299.00</span>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="close-circle">
-                            <a href="#">
-                                <i class="ti-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="media">
-                            <a href="#"><img alt="" class="mr-3" src="../../../../assets/images/layout-2/product/1.jpg"></a>
-                            <div class="media-body">
-                                <a href="#">
-                                    <h4>item name</h4>
-                                </a>
-                                <h4><span>1 x $ 299.00</span></h4>
-                            </div>
-                        </div>
-                        <div class="close-circle">
-                            <a href="#">
-                                <i class="ti-trash" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                    </li>
+                    <product-sidebar
+                        v-for="(p, index) in products"
+                        :key="index"
+                        :product="p"
+                    />
                 </ul>
                 <ul class="cart_total">
                     <li>
                         <div class="total">
-                            <h5>subtotal : <span>$299.00</span></h5>
+                            <h5>subtotal : <span>$ {{total}}</span></h5>
                         </div>
                     </li>
                     <li>
@@ -88,14 +37,27 @@
 </template>
 
 <script>
-    export default {
-        name: "cart-component",
-        methods: {
-            closeCart() {
-                document.getElementById("cart_side").classList.remove('open-side');
-            },
-        }
+import {mapGetters, mapActions} from 'vuex'
+import ProductSidebar from "@/views/shop/cart/components/product-sidebar";
+export default {
+  name: "cart-component",
+  components: {ProductSidebar},
+  methods: {
+    closeCart() {
+      document.getElementById("cart_side").classList.remove('open-side');
+    },
+  },
+  computed: {
+    ...mapGetters({
+      products: 'cart/products'
+    }),
+    total () {
+      return Math.round(this.products.reduce((accumulator, currentValue) => {
+        return accumulator + (currentValue.quantity * currentValue.price)
+      }, 0))
     }
+  }
+}
 </script>
 
 <style scoped>

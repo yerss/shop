@@ -1,35 +1,37 @@
 <template>
-    <section class="product section-pb-space mb--5">
-        <div class="custom-container">
-            <div class="row">
-                <div class="col pr-0">
-                    <div class="product-slide-6 no-arrow">
-                        <product/>
+    <div>
+        <section class="rounded-category">
+            <div class="container">
+                <div class="row" >
+                    <div class="col" >
+                        <div class="slide-6 no-arrow">
+                            <category-slider/>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </template>
 
 <script>
 import $ from 'jquery'
 import slick from '../../../assets/js/slick'
-import Product from "./components/product";
+import CategorySlider from "@/views/shop/categories/components/category-slider";
 export default {
-    name: "products-component",
-    components: {Product},
-    mounted() {
-        $(".product-slide-6").slick({
-            arrows: true,
+    name: "categories-component",
+  components: {CategorySlider},
+  mounted() {
+        $('.slide-6').slick({
             dots: false,
-            infinite: false,
+            infinite: true,
             speed: 300,
             slidesToShow: 6,
-            slidesToScroll: 1,
+            slidesToScroll: 6,
             responsive: [
                 {
-                    breakpoint: 1700,
+                    breakpoint: 1367,
                     settings: {
                         slidesToShow: 5,
                         slidesToScroll: 5,
@@ -37,7 +39,7 @@ export default {
                     }
                 },
                 {
-                    breakpoint: 1200,
+                    breakpoint: 1024,
                     settings: {
                         slidesToShow: 4,
                         slidesToScroll: 4,
@@ -45,7 +47,7 @@ export default {
                     }
                 },
                 {
-                    breakpoint: 991,
+                    breakpoint: 767,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 3,
@@ -53,12 +55,13 @@ export default {
                     }
                 },
                 {
-                    breakpoint: 576,
+                    breakpoint: 480,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2
                     }
                 }
+
             ]
         });
     }

@@ -10,22 +10,10 @@ const state = () => ({
 })
 
 const getters = {
-    category: state => {
-        return state.selected
-    },
 
-    categories: state => {
-        return state.list
-    }
 }
 
 const actions = {
-    async getCategories({
-        commit
-    }){
-        let { data } = await categories.getCategories()
-        commit('setCategories', data.data)
-    }
 }
 
 const mutations = {
