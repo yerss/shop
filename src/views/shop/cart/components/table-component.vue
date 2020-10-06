@@ -11,7 +11,11 @@
         <th scope="col">total</th>
       </tr>
       </thead>
-      <product-component v-for="p in products" :product="p"/>
+      <product-component
+              v-for="(p, index) in products"
+              :product="p"
+              :key="index"
+      />
     </table>
     <table class="table cart-table table-responsive-md">
       <tfoot>

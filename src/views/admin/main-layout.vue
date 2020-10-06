@@ -11,5 +11,4 @@ export default {
 </script>
 
 <style lang="css">
-  @import "../../assets/admin/scss/style.scss";
 </style>

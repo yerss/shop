@@ -1,7 +1,11 @@
 <template>
     <div class="product-wrapper-grid">
         <div class="row">
-            <product-component :product="p" v-for="p in products"/>
+            <product-component
+                    :product="p"
+                    v-for="(p, index) in products"
+                    :key="index"
+            />
         </div>
     </div>
 </template>
