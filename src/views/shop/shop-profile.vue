@@ -1,109 +1,107 @@
 <template>
-  <section class="contact-page register-page section-big-py-space bg-light">
-    <div class="custom-container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h3 class="mb-3">PERSONAL DETAIL</h3>
-          <form class="theme-form">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="name">First Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter Your name" required="">
+    <section class="section-big-py-space bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="account-sidebar"><a class="popup-btn">my account</a></div>
+                    <div class="dashboard-left">
+                        <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left"
+                                                                                         aria-hidden="true"></i> back</span>
+                        </div>
+                        <div class="block-content ">
+                            <ul>
+                                <li class="active"><a href="#">Account Info</a></li>
+                                <li><a href="#">Address Book</a></li>
+                                <li><a href="#">My Orders</a></li>
+                                <li><a href="#">My Wishlist</a></li>
+                                <li v-if="role === 'admin'"> <router-link tag="a" to="/admin">Admin page</router-link></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Change Password</a></li>
+                                <li class="last"><a class="pointer" @click="logout">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="email">Last Name</label>
-                  <input type="text" class="form-control" id="last-name" placeholder="Last Name" required="">
+                <div class="col-lg-9">
+                    <div class="dashboard-right">
+                        <div class="dashboard">
+                            <div class="page-title">
+                                <h2>My Dashboard</h2></div>
+                            <div class="welcome-msg">
+                                <p>Hello, MARK JECNO !</p>
+                                <p>From your My Account Dashboard you have the ability to view a snapshot of your recent
+                                    account activity and update your account information. Select a link below to view or
+                                    edit information.</p>
+                            </div>
+                            <div class="box-account box-info">
+                                <div class="box-head">
+                                    <h2>Account Information</h2></div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="box">
+                                            <div class="box-title">
+                                                <h3>Contact Information</h3><a href="#">Edit</a></div>
+                                            <div class="box-content">
+                                                <h6>MARK JECNO</h6>
+                                                <h6>MARk-JECNO@gmail.com</h6>
+                                                <h6><a href="#">Change Password</a></h6></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="box">
+                                            <div class="box-title">
+                                                <h3>Newsletters</h3><a href="#">Edit</a></div>
+                                            <div class="box-content">
+                                                <p>You are currently not subscribed to any newsletter.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="box">
+                                        <div class="box-title">
+                                            <h3>Address Book</h3><a href="#">Manage Addresses</a></div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <h6>Default Billing Address</h6>
+                                                <address>You have not set a default billing address.<br><a href="#">Edit
+                                                    Address</a></address>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <h6>Default Shipping Address</h6>
+                                                <address>You have not set a default shipping address.<br><a href="#">Edit
+                                                    Address</a></address>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="review">Phone number</label>
-                  <input type="text" class="form-control" id="review" placeholder="Enter your number" required="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" class="form-control" id="email" placeholder="Email" required="">
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <div >
-                  <label for="review">Write Your Message</label>
-                  <textarea class="form-control mb-0" placeholder="Write Your Message" id="exampleFormControlTextarea1" rows="6"></textarea>
-                </div>
-              </div>
             </div>
-          </form>
         </div>
-        <div class="col-lg-6">
-          <h3 class="mb-3 spc-responsive">SHIPPING ADDRESS</h3>
-          <form class="theme-form">
-            <div class="form-row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="home-ploat">flat / plot</label>
-                  <input type="text" class="form-control" id="home-ploat" placeholder="company name" required="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="address-two">Address *</label>
-                  <input type="text" class="form-control" id="address-two" placeholder="Address" required="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="zip-code">Zip Code *</label>
-                  <input type="text" class="form-control" id="zip-code" placeholder="zip-code" required="">
-                </div>
-              </div>
-              <div class="col-md-6 select_input">
-                <div class="form-group">
-                  <label >Country *</label>
-                  <select class="form-control" size="1">
-                    <option value="India">India</option>
-                    <option value="UAE">UAE</option>
-                    <option value="U.K">U.K</option>
-                    <option value="US">US</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="city">City *</label>
-                  <input type="text" class="form-control" id="city" placeholder="City" required="">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="region-state">Region/State *</label>
-                  <input type="text" class="form-control" id="region-state" placeholder="Region/state" required="">
-                </div>
-              </div>
-              <div class="col-md-12">
-                <button class="btn btn-sm btn-normal mb-lg-5" type="submit">Save setting</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
+    </section>
 </template>
 
 <script>
-export default {
-name: "shop-profile"
-}
+    import {mapGetters} from 'vuex'
+    export default {
+        name: "shop-profile",
+        methods: {
+          async logout() {
+              this.$store.dispatch('auth/logout').then(()=>{
+                  this.$router.push('/')
+              })
+          }
+        },
+        computed:{
+            ...mapGetters({
+                role: 'auth/role'
+            })
+        }
+    }
 </script>
 
 <style scoped>
-
 </style>

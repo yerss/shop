@@ -29,7 +29,10 @@
               </div>
               <div class="form-row">
                 <div class="col-md-12 ">
-                  <p >Have you already account? <a href="login.html" class="txt-default">click</a> here to &nbsp;<a href="login.html" class="txt-default">Login</a></p>
+                  <p >Have you already account?
+                    <router-link to="/login" class="txt-default">click </router-link>here to
+                    <router-link to="/login" class="txt-default">Login</router-link>
+                  </p>
                 </div>
               </div>
             </form>

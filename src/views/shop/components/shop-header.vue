@@ -76,7 +76,7 @@
                             </div>
                         </div>
                         <div class="menu-nav">
-              <span class="toggle-nav">
+                            <span class="toggle-nav">
                 <i class="fa fa-bars "></i>
               </span>
                         </div>
@@ -145,9 +145,10 @@
                                 </div>
                                 <div class="icon-block">
                                     <ul>
-                                        <li class="mobile-user onhover-dropdown" @click="openAccount()">
-                                            <a href="#"><i class="icon-user"></i>
-                                            </a>
+                                        <li class="mobile-user onhover-dropdown">
+                                            <router-link :to=" !isLoggedIn ? '/login' : '/profile'">
+                                                <i class="icon-user"></i>
+                                            </router-link>
                                         </li>
                                         <li class="mobile-wishlist" @click="openWishlist()">
                                             <a><i class="icon-heart"></i>
@@ -165,12 +166,12 @@
                                                                 <div class="col-xl-12">
                                                                     <form>
                                                                         <div class="form-group">
-                                                                          <input type="text" class="form-control"
-                                                                                 id="exampleInputPassword1"
-                                                                                 placeholder="Search a Product">
+                                                                            <input type="text" class="form-control"
+                                                                                   id="exampleInputPassword1"
+                                                                                   placeholder="Search a Product">
                                                                         </div>
                                                                         <button type="submit" class="btn btn-primary">
-                                                                          <i class="fa fa-search"></i></button>
+                                                                            <i class="fa fa-search"></i></button>
                                                                     </form>
                                                                 </div>
                                                             </div>
@@ -221,7 +222,8 @@
                                             </div>
                                             <div class="media-body">
                                                 <h5 class="mt-0">Fashion Discount</h5>
-                                                <p><img src="../../../assets/images/icon/fire.png" class="fire" alt="fire">Extra
+                                                <p><img src="../../../assets/images/icon/fire.png" class="fire"
+                                                        alt="fire">Extra
                                                     10% off (upto Rs. 10,000*) </p>
                                             </div>
                                         </div>
@@ -268,15 +270,16 @@
 </template>
 
 <script>
-import $ from "jquery"
-import smartmenu from '../../../assets/js/menu'
-import {mapGetters} from 'vuex'
-import ProductSidebar from "@/views/shop/cart/components/product-sidebar";
-import CategoryNavbar from "@/views/shop/categories/components/category-navbar";
-export default{
+    import $ from "jquery"
+    import smartmenu from '../../../assets/js/menu'
+    import {mapGetters} from 'vuex'
+    import ProductSidebar from "@/views/shop/cart/components/product-sidebar";
+    import CategoryNavbar from "@/views/shop/categories/components/category-navbar";
+
+    export default {
         name: "shop-header",
-  components: {CategoryNavbar, ProductSidebar},
-  mounted() {
+        components: {CategoryNavbar, ProductSidebar},
+        mounted() {
             $('.language-dropdown-open').slideUp();
             $('.language-dropdown-click').on('click', function () {
                 $('.language-dropdown-open').slideToggle()
@@ -312,45 +315,40 @@ export default{
                 });
             });
             $('.toggle-nav').on('click', function () {
-                $('.sm-horizontal').css("right","0px");
+                $('.sm-horizontal').css("right", "0px");
             });
-            $(".mobile-back").on('click', function (){
-                $('.sm-horizontal').css("right","-410px");
+            $(".mobile-back").on('click', function () {
+                $('.sm-horizontal').css("right", "-410px");
             });
 
             $('.sm-nav-btn').on('click', function () {
-                $('.nav-slide').css("left","0px");
+                $('.nav-slide').css("left", "0px");
             });
-            $(".nav-sm-back").on('click', function (){
-                $('.nav-slide').css("left","-410px");
+            $(".nav-sm-back").on('click', function () {
+                $('.nav-slide').css("left", "-410px");
             });
 
             $('.toggle-nav-desc').on('click', function () {
-                $('.desc-horizontal').css("right","0px");
+                $('.desc-horizontal').css("right", "0px");
             });
-            $(".desc-back").on('click', function (){
-                $('.desc-horizontal').css("right","-410px");
+            $(".desc-back").on('click', function () {
+                $('.desc-horizontal').css("right", "-410px");
             });
         },
         methods: {
             openWishlist() {
                 document.getElementById("wishlist_side").classList.add('open-side');
             },
-            openSetting() {
-                document.getElementById("mySetting").classList.add('open-side');
-            },
             openCart() {
                 document.getElementById("cart_side").classList.add('open-side');
             },
-            openAccount() {
-                document.getElementById("myAccount").classList.add('open-side');
-            },
         },
         computed: {
-          ...mapGetters({
-            cart_count: 'cart/products_count',
-            count_wishlist: 'wishlist/products_count',
-          })
+            ...mapGetters({
+                isLoggedIn: 'auth/isLoggedIn',
+                cart_count: 'cart/products_count',
+                count_wishlist: 'wishlist/products_count',
+            })
         }
     }
 </script>

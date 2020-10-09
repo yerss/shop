@@ -4,7 +4,6 @@
     <shop-header/>
     <breadcrumb-component v-if="`${this.$route.path}`!='/'"/>
     <router-view/>
-    <my-account-component/>
     <cart-component/>
     <wishlist-component/>
     <shop-footer/>
@@ -16,7 +15,6 @@
 import ShopHeader from './components/shop-header'
 import ShopFooter from './components/shop-footer'
 import loader from './loader'
-import MyAccountComponent from "./my-account-component";
 import CartComponent from "./cart/components/cart-component";
 import WishlistComponent from "./wishlist/wishlist-component";
 import ProductModalComponent from "./components/product-modal-component";
@@ -34,7 +32,6 @@ export default {
         ProductModalComponent,
         WishlistComponent,
         CartComponent,
-        MyAccountComponent,
         ShopHeader,
         ShopFooter,
         loader,
@@ -54,7 +51,6 @@ export default {
 <style >
 @import "../../assets/css/slick.css";
 @import "../../assets/css/slick-theme.css";
-@import "../../assets/css/font-awesome.css";
 @import "../../assets/css/themify.css";
 @import "../../assets/css/animate.css";
 @import "../../assets/css/bootstrap.css";

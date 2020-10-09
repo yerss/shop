@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 require('./assets/js/bootstrap')
 require('./assets/js/slider-animat')
+const feather = require('./assets/js/icons/feather-icon/feather.min')
+feather.replace()
 
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
