@@ -21,6 +21,20 @@ const AdminProductTable = () => import('@/views/admin/product/product-table')
 const AdminProductFrom = () => import('@/views/admin/product/product-form')
 const AdminCategoryTable = () => import('@/views/admin/category/category-table')
 const AdminSubCategoryTable = () => import('@/views/admin/category/sub-category-table')
+const AdminFilterValueTable = () => import('@/views/admin/filter/filter-value-table')
+const AdminFilterGroupTable = () => import('@/views/admin/filter/filter-group-table')
+const AdminBrandTable = () => import('@/views/admin/brand/brand-table')
+const AdminCityTable = () => import('@/views/admin/address/city-table')
+const AdminAddressTable = () => import('@/views/admin/address/address-table')
+const AdminRegionTable = () => import('@/views/admin/address/region-table')
+const AdminMediaTable = () => import('@/views/admin/media/media-table')
+const AdminOrdersTable = () => import('@/views/admin/orders/order-table')
+const AdminTransactionTable = () => import('@/views/admin/orders/transaction-table')
+const AdminReports = () => import('@/views/admin/reports/reports')
+const AdminUserTable = () => import('@/views/admin/user/user-table')
+const AdminAddUser = () => import('@/views/admin/user/user-form')
+const AdminProfileSettings = () => import('@/views/admin/profile/profile-settings')
+
 
 Vue.use(Router)
 
@@ -55,6 +69,71 @@ let router = new Router({
                     path: 'sub-categories',
                     name: 'sub-categories',
                     component: AdminSubCategoryTable
+                },
+                {
+                    path: 'filter-groups',
+                    name: 'filter-groups',
+                    component: AdminFilterGroupTable
+                },
+                {
+                    path: 'filter-values',
+                    name: 'filter-values',
+                    component: AdminFilterValueTable
+                },
+                {
+                    path: 'brands',
+                    name: 'brands',
+                    component: AdminBrandTable
+                },
+                {
+                    path: 'regions',
+                    name: 'regions',
+                    component: AdminRegionTable
+                },
+                {
+                    path: 'addresses',
+                    name: 'addresses',
+                    component: AdminAddressTable
+                },
+                {
+                    path: 'cities',
+                    name: 'cities',
+                    component: AdminCityTable
+                },
+                {
+                    path: 'media',
+                    name: 'media',
+                    component: AdminMediaTable
+                },
+                {
+                    path: 'orders',
+                    name: 'orders',
+                    component: AdminOrdersTable
+                },
+                {
+                    path: 'transactions',
+                    name: 'transactions',
+                    component: AdminTransactionTable
+                },
+                {
+                    path: 'profile',
+                    name: 'profile',
+                    component: AdminProfileSettings
+                },
+                {
+                    path: 'reports',
+                    name: 'reports',
+                    component: AdminReports
+                },
+                {
+                    path: 'users',
+                    name: 'users',
+                    component: AdminUserTable
+                },
+                {
+                    path: 'add-user',
+                    name: 'add-user',
+                    component: AdminAddUser
                 },
             ]
         },

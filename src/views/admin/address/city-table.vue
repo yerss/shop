@@ -66,10 +66,8 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters} from "vuex";
-
     export default {
-        name: "sub-category-table",
+        name: "city-table",
         data () {
             return {
                 isBusy: true,
@@ -103,22 +101,7 @@
                 ]
             }
         },
-        computed: {
-            ...mapGetters({
-                categories: 'categories/categories'
-            })
-        },
-        methods: {
-            ...mapActions({
-                getCategories: 'categories/getCategories'
-            })
-        },
-        mounted() {
-            this.getCategories().finally(() => {
-                this.items = this.categories
-                this.isBusy = false
-            })
-        }
+
     }
 </script>
 

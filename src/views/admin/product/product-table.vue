@@ -8,7 +8,7 @@
                     </div>
                     <div class="card-body">
 <!--                        <div id="basicScenario" class="product-list digital-product"></div>-->
-                        <b-table :fields="fields">
+                        <b-table :fields="fields" outlined>
 
                         </b-table>
                     </div>
