@@ -1,122 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import products from "../../api/product";
 
 Vue.use(Vuex)
 
 const state = () => ({
     selected: {},
-    products: [
-        {
-            id: 1,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 12,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 131,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 11,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 16,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 17,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 19,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 13,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 178,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 1867,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-        {
-            id: 1093,
-            rating: 4,
-            img_url: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/a1.jpg",
-            img_url2: "http://themes.pixelstrap.com/bigdeal/assets/images/layout-2/product/1.jpg",
-            old_price: 56.21,
-            price: 24.15,
-            name: 'reader will be distracted.',
-            description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book'
-        },
-    ]
+    list: []
 })
 
 const getters = {
@@ -124,35 +14,67 @@ const getters = {
         return state.selected
     },
     products: state => {
-        return state.products
+        return state.list
     }
 }
 
 const actions = {
-    // async getProducts({
-    //     commit
-    // }) {
-    //     let {
-    //         data
-    //     } = await //some method;
-    //     commit('setProducts', data)
-    // }
+    async getProducts({
+        commit
+    }){
+        let {
+            data
+        } = await products.getProducts()
+        commit('setProducts', data.data)
+    },
+
+    async addProduct({commit}, product) {
+        let {
+            data
+        } = await products.addProduct(product)
+        commit('addProduct', product)
+    },
+
+    async editProduct({commit}, product) {
+        let {
+            data
+        } = await products.editProduct(product.id, product)
+        commit('editProduct', product)
+    },
+
+    async deleteProduct({commit}, id) {
+        await products.deleteProduct(id)
+        commit('deleteProduct', id)
+    }
 }
 
 const mutations = {
     setProducts(state, data) {
-        state.products = data
+        state.list = data
     },
     setProduct(state, product) {
-        state.product = product
+        state.selected = product
+    },
+    addProduct(state, product) {
+        state.list.unshift(product)
+    },
+    editProduct(state, product) {
+        const products = [...state.list]
+        const index = products.findIndex(p => p.id === product.id)
+        if (index > -1) {
+            products[index] = {
+                ...product
+            }
+        }
+        state.list = products
     },
     deleteProduct(state, id) {
-        const products = [...state.products]
+        const products = [...state.list]
         const index = products.findIndex(p => p.id === id)
         if (index > -1) {
             products.splice(index, 1)
         }
-        state.products = products
+        state.list = products
     }
 }
 

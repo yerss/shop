@@ -26,7 +26,23 @@ const actions = {
             data
         } = await categories.getCategories()
         commit('setCategories', data.data)
-    }
+    },
+    async addCategory({commit}, category) {
+        let {
+            data
+        } = await categories.addCategory(category)
+        commit('addCategory', data)
+    },
+    async editCategory({commit}, category){
+        let {
+            data
+        } = await categories.editCategory(category.id, category)
+        commit('editCategory', category)
+    },
+    async deleteCategory({commit}, id){
+        await categories.deleteCategory(id)
+        commit('deleteCategory', id)
+    },
 }
 
 const mutations = {
@@ -35,6 +51,27 @@ const mutations = {
     },
     setCategory(state, category) {
         state.selected = category
+    },
+    addCategory(state, category) {
+        state.list.unshift(category)
+    },
+    editCategory(state, category) {
+        const categories = [...state.list]
+        const index = categories.findIndex(p => p.id === category.id)
+        if (index > -1) {
+            categories[index] = {
+                ...category
+            }
+        }
+        state.list = categories
+    },
+    deleteCategory(state, id) {
+        const categories = [...state.list]
+        const index = categories.findIndex(p => p.id === id)
+        if (index > -1) {
+            categories.splice(index, 1)
+        }
+        state.list = categories
     }
 }
 

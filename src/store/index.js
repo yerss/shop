@@ -7,6 +7,10 @@ import wishlist from '@/store/modules/wishlist'
 import categories from '@/store/modules/categories'
 import auth from '@/store/modules/auth'
 import filters from '@/store/modules/filter'
+import regions from '@/store/modules/region'
+import cities from '@/store/modules/city'
+import addresses from '@/store/modules/address'
+import brands from '@/store/modules/brand'
 
 Vue.use(Vuex)
 
@@ -24,6 +28,6 @@ export default new Vuex.Store({
 
     },
     modules: {
-        products, cart, wishlist, categories, auth, filters
+        products, cart, wishlist, categories, auth, filters, regions, cities, addresses, brands
     }
 })

@@ -4,39 +4,12 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Category List</h5>
+                        <h5>Список регионов</h5>
                     </div>
                     <div class="card-body">
                         <div class="btn-popup pull-right">
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-original-title="test" data-target="#exampleModal">Add Category</button>
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title f-w-600" id="exampleModalLabel">Add Digital Product</h5>
-                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form class="needs-validation">
-                                                <div class="form">
-                                                    <div class="form-group">
-                                                        <label for="validationCustom01" class="mb-1">Category Name :</label>
-                                                        <input class="form-control" id="validationCustom01" type="text">
-                                                    </div>
-                                                    <div class="form-group mb-0">
-                                                        <label for="validationCustom02" class="mb-1">Category Image :</label>
-                                                        <input class="form-control" id="validationCustom02" type="file">
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-primary" type="button">Save</button>
-                                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <button @click.prevent="add" type="button" class="btn btn-secondary" data-toggle="modal" data-original-title="test" data-target="#regionModal">Добавить</button>
+                            <region-form/>
                         </div>
                         <div class="table-responsive">
 
@@ -66,8 +39,11 @@
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex'
+    import RegionForm from "./region-form";
     export default {
         name: "region-table",
+        components: {RegionForm},
         data () {
             return {
                 isBusy: true,
@@ -79,18 +55,8 @@
                         sortable: true
                     },
                     {
-                        key: "image",
-                        label: 'Изоброжение',
-                        sortable: true
-                    },
-                    {
                         key: "name",
                         label: 'Наименование',
-                        sortable: true
-                    },
-                    {
-                        key: "alias",
-                        label: 'Короткое имя',
                         sortable: true
                     },
                     {
@@ -101,6 +67,33 @@
                 ]
             }
         },
+        computed: {
+            ...mapGetters({
+                regions: 'regions/regions'
+            })
+        },
+        methods: {
+            ...mapActions({
+                getRegions: 'regions/getRegions'
+            }),
+            add(){
+                console.log('dasdas')
+            },
+            edit(item){
+
+            },
+            delete(item){
+
+            }
+        },
+        mounted() {
+            this.getRegions().finally(() => {
+                this.items = this.regions
+                this.isBusy = false
+            }).catch(e => {
+                console.log(e)
+            })
+        }
     }
 </script>
 

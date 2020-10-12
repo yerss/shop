@@ -4,11 +4,11 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Category List</h5>
+                        <h5>Группа фильтров</h5>
                     </div>
                     <div class="card-body">
                         <div class="btn-popup pull-right">
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-original-title="test" data-target="#exampleModal">Add Category</button>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-original-title="test" data-target="#filterGroupModal">Добавить</button>
                             <filter-group-form/>
                         </div>
                         <div class="table-responsive">
@@ -85,7 +85,7 @@
 
             },
             deleteItem (item) {
-                this.deleteFilterGroup(item)
+                this.deleteFilterGroup(item.id)
             }
         },
         mounted() {

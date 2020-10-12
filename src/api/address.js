@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-export default {
+const addresses =  {
     api: 'http://localhost:8000/api',
 
     getAddresses () {
@@ -29,3 +29,5 @@ export default {
         return axios.delete(this.api + url)
     },
 }
+
+export default addresses

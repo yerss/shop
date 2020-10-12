@@ -35,7 +35,10 @@ const actions = {
             localStorage.setItem('role', role)
             // localStorage.setItem('refreshToken', refresh)
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-            commit('auth_success', token, role)
+            commit('auth_success', {
+                token: token,
+                role: role
+            })
             // dispatch('getCurrentUser', parseJwt(token).user_id)
         } catch (err) {
             console.log(err)
@@ -81,10 +84,10 @@ const mutations = {
     auth_request (state) {
         state.status = 'loading'
     },
-    auth_success (state, token, role) {
+    auth_success (state, params) {
         state.status = 'success'
-        state.token = token
-        state.role = role
+        state.token = params.token
+        state.role = params.role
         // state.refresh = refresh
     },
     auth_error (state) {
