@@ -15,5 +15,8 @@ export default {
 
 <style>
   @import "assets/css/font-awesome.css";
-
+  .crud-button {
+    cursor: pointer;
+    color: #0dc7ff;
+  }
 </style>

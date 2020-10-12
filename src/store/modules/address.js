@@ -68,7 +68,7 @@ const mutations = {
         }
         state.list = addresses
     },
-    deleteCity(state, id) {
+    deleteAddress(state, id) {
         const  addresses = [...state.list]
         const index = addresses.findIndex(p => p.id === id)
         if (index > -1) {

@@ -11,21 +11,26 @@
                         <div class="form">
                             <div class="form-group">
                                 <label for="validationCustom01" class="mb-1">Регион:</label>
-                                <b-select/>
+                                <b-form-select
+                                        v-model="city.region_id"
+                                        :options="regions"
+                                        text-field="name"
+                                        value-field="id"
+                                />
                             </div>
                             <div class="form-group">
                                 <label for="validationCustom02" class="mb-1">Наименование:</label>
-                                <input class="form-control" id="validationCustom02" type="text">
+                                <input class="form-control" id="validationCustom02" type="text" v-model="city.name">
                             </div>
                             <div class="form-group mb-0">
                                 <label for="validationCustom03" class="mb-1">ZIP код:</label>
-                                <input class="form-control" id="validationCustom03" type="text">
+                                <input class="form-control" id="validationCustom03" type="text" v-model="city.zip_code">
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="button">Сохранить</button>
+                    <button class="btn btn-primary" type="button" @click="addCity(city)">Сохранить</button>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Отменить</button>
                 </div>
             </div>
@@ -34,8 +39,27 @@
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex'
     export default {
-        name: "city-form"
+        name: "city-form",
+        data () {
+            return {
+                city: {}
+            }
+        },
+        mounted() {
+
+        },
+        computed: {
+            ...mapGetters({
+                regions: 'regions/regions'
+            })
+        },
+        methods: {
+            ...mapActions({
+                addCity: 'cities/addCity'
+            })
+        }
     }
 </script>
 

@@ -11,13 +11,13 @@
                         <div class="form">
                             <div class="form-group">
                                 <label for="validationCustom01" class="mb-1">Наименование :</label>
-                                <input class="form-control" id="validationCustom01" type="text">
+                                <input class="form-control" id="validationCustom01" type="text" v-model="region.name">
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="button">Сохранить</button>
+                    <button class="btn btn-primary" type="button" @click="addRegion(region)">Сохранить</button>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Отменить</button>
                 </div>
             </div>
@@ -26,8 +26,19 @@
 </template>
 
 <script>
+    import {mapActions} from 'vuex'
     export default {
-        name: "region-form"
+        name: "region-form",
+        data () {
+            return {
+                region: {}
+            }
+        },
+        methods: {
+            ...mapActions({
+                addRegion: 'regions/addRegion'
+            })
+        }
     }
 </script>
 

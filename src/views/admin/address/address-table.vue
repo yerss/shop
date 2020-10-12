@@ -15,12 +15,12 @@
 
                             <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
                                 <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
-                                    <a href="javascript:void(0)">
-                                        <i class="fa fa-edit"></i>
+                                    <a>
+                                        <i class="fa fa-edit crud-button"></i>
                                     </a>
                                     /
-                                    <a href="javascript:void(0)">
-                                        <i class="fa fa-trash"></i>
+                                    <a @click="deleteAddress(row.item.id)">
+                                        <i class="fa fa-trash crud-button"></i>
                                     </a>
                                 </template>
                                 <template v-slot:table-busy>
@@ -87,15 +87,18 @@
                 ]
             }
         },
-        mounted() {
-            this.getAddress().finally(()=>{
+        async created() {
+            await this.getAddress().finally(()=>{
+                this.getCities()
                 this.items = this.addresses
                 this.isBusy = false
             })
         },
         methods: {
             ...mapActions({
-                getAddress: 'addresses/getAddresses'
+                getAddress: 'addresses/getAddresses',
+                getCities: 'cities/getCities',
+                deleteAddress: 'addresses/deleteAddress'
             })
         },
         computed: {

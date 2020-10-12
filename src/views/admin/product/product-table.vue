@@ -11,11 +11,11 @@
                         <b-table :fields="fields" :items="items" outlined hover>
                             <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
                                 <a href="javascript:void(0)" @click="edit(row.item)">
-                                    <i class="fa fa-edit"></i>
+                                    <i class="fa fa-edit crud-button"></i>
                                 </a>
                                 /
                                 <a href="javascript:void(0)" @click="deleteItem(row.item)">
-                                    <i class="fa fa-trash"></i>
+                                    <i class="fa fa-trash crud-button"></i>
                                 </a>
                             </template>
                             <template v-slot:table-busy>
