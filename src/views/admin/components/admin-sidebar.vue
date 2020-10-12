@@ -121,11 +121,6 @@
                                 <i class="fa fa-circle"></i>Список пользователей
                             </router-link>
                         </li>
-                        <li>
-                            <router-link to="/admin/add-user/">
-                                <i class="fa fa-circle"></i>Добавить пользователей
-                            </router-link>
-                        </li>
                     </ul>
                 </li>
                 <li>
