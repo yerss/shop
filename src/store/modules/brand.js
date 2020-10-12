@@ -29,6 +29,7 @@ const actions = {
     },
 
     async addBrand({commit}, brand) {
+        console.log(brand)
         let {
             data
         } = await brands.addBrand(brand)

@@ -48,8 +48,8 @@ const filter = {
             ...filterValue
         })
     },
-    deletefilterValue (id) {
-        const url = `/filterValue/${id}/`
+    deleteFilterValue (id) {
+        const url = `/filterValues/${id}/`
         return axios.delete(this.api + url)
     },
 }

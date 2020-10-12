@@ -16,11 +16,11 @@
                         <div class="table-responsive">
                             <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
                                 <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
-                                    <a href="javascript:void(0)">
+                                    <a>
                                         <i class="fa fa-edit crud-button"></i>
                                     </a>
                                     /
-                                    <a href="javascript:void(0)">
+                                    <a @click="deleteFilterValue(row.item.id)">
                                         <i class="fa fa-trash crud-button"></i>
                                     </a>
                                 </template>
@@ -73,8 +73,9 @@
                 ]
             }
         },
-        mounted() {
-            this.getFilterValues().finally(()=>{
+        async created() {
+            await this.getFilterGroups()
+            await this.getFilterValues().finally(()=>{
                 this.items = this.filterValues
                 this.isBusy = false
             })
@@ -86,7 +87,9 @@
         },
         methods: {
             ...mapActions({
-                getFilterValues: 'filters/getFilterValues'
+                getFilterValues: 'filters/getFilterValues',
+                getFilterGroups: 'filters/getFilterGroups',
+                deleteFilterValue: 'filters/deleteFilterValue'
             })
         }
     }

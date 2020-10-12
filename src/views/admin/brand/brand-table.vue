@@ -4,7 +4,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Список брендовы</h5>
+                        <h5>Список брендов</h5>
                     </div>
                     <div class="card-body">
                         <div class="btn-popup pull-right">
@@ -15,11 +15,11 @@
 
                             <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
                                 <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
-                                    <a href="javascript:void(0)">
+                                    <a>
                                         <i class="fa fa-edit crud-button"></i>
                                     </a>
                                     /
-                                    <a href="javascript:void(0)">
+                                    <a @click="deleteBrand(row.item.id)">
                                         <i class="fa fa-trash crud-button"></i>
                                     </a>
                                 </template>
@@ -96,7 +96,8 @@
         },
         methods: {
             ...mapActions({
-                getBrands: 'brands/getBrands'
+                getBrands: 'brands/getBrands',
+                deleteBrand: 'brands/deleteBrand'
             })
         }
 

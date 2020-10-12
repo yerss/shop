@@ -74,13 +74,9 @@
         methods: {
             ...mapActions({
                 getFilterGroups: 'filters/getFilterGroups',
-                addFilterGroup: 'filters/addFilterGroup',
                 deleteFilterGroup: 'filters/deleteFilterGroup',
                 editFilterGroup: 'filters/editFilterGroup',
             }),
-            add () {
-
-            },
             edit (item) {
 
             },
