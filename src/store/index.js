@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 import products from '@/store/modules/products'
 import cart from '@/store/modules/cart'
@@ -13,6 +14,7 @@ import addresses from '@/store/modules/address'
 import brands from '@/store/modules/brand'
 
 Vue.use(Vuex)
+axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`
 
 export default new Vuex.Store({
     state: {

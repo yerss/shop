@@ -55,7 +55,7 @@
                         sortable: true
                     },
                     {
-                        key: "city",
+                        key: "city.name",
                         label: 'Город',
                         sortable: true
                     },

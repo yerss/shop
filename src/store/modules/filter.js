@@ -41,7 +41,7 @@ const actions = {
         let {
             data
         } = await filter.getFilterValues()
-        commit('setFiltersValue', data.data)
+        commit('setFilterValues', data.data)
     },
     async addFilterGroup({commit}, filterGroup){
         let {
@@ -88,7 +88,7 @@ const mutations = {
         state.list_group = filterGroups
     },
     setFilterValues (state, filterValues) {
-        state.list_values = filterValues
+        state.list_value = filterValues
     },
     setFilterGroup (state, filterGroup) {
         state.selected_group = filterGroup

@@ -146,7 +146,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a class="sidebar-header"><i data-feather="log-out"></i><span>Выйти</span></a>
+                <li><a class="sidebar-header" @click="logout"><i data-feather="log-out"></i><span>Выйти</span></a>
                 </li>
             </ul>
         </div>
@@ -161,6 +161,13 @@
         name: "admin-sidebar",
         data() {
             return {}
+        },
+        methods: {
+            async logout() {
+                this.$store.dispatch('auth/logout').then(()=>{
+                    this.$router.push('/')
+                })
+            }
         },
         mounted() {
             $.sidebarMenu = function (menu) {

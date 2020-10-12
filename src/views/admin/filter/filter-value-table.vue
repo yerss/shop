@@ -14,7 +14,6 @@
                             <filter-value-form/>
                         </div>
                         <div class="table-responsive">
-
                             <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
                                 <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
                                     <a href="javascript:void(0)">
@@ -62,7 +61,7 @@
                         sortable: true
                     },
                     {
-                        key: "name",
+                        key: "value",
                         label: 'Наименование',
                         sortable: true
                     },
