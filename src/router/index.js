@@ -203,8 +203,7 @@ let router = new Router({
                     path: 'profile',
                     name: 'profile',
                     component: ShopProfile
-                }
-                ,
+                },
                 {
                     path: 'categories',
                     name: 'categories',
@@ -216,6 +215,7 @@ let router = new Router({
 
     ]
 })
+
 
 
 export default router

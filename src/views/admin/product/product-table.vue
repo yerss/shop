@@ -7,14 +7,13 @@
                         <h5>Product List</h5>
                     </div>
                     <div class="card-body">
-<!--                        <div id="basicScenario" class="product-list digital-product"></div>-->
                         <b-table :fields="fields" :items="items" outlined hover>
                             <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
-                                <a href="javascript:void(0)" @click="edit(row.item)">
+                                <a href="javascript:void(0)">
                                     <i class="fa fa-edit crud-button"></i>
                                 </a>
                                 /
-                                <a href="javascript:void(0)" @click="deleteItem(row.item)">
+                                <a href="javascript:void(0)" @click="deleteProduct(row.item.id)">
                                     <i class="fa fa-trash crud-button"></i>
                                 </a>
                             </template>
@@ -91,9 +90,15 @@
         },
         methods: {
             ...mapActions({
-                getProducts: 'products/getProducts'
+                getProducts: 'products/getProducts',
+                deleteProduct: 'products/deleteProduct'
             })
         },
+        watch:{
+            products (val) {
+                this.items = val
+            }
+        }
     }
 </script>
 

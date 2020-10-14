@@ -32,14 +32,14 @@ const actions = {
         let {
             data
         } = await regions.addRegion(region)
-        commit('addRegion', region)
+        commit('addRegion', data.data)
     },
 
     async editRegion({commit}, region) {
         let {
             data
         } = await regions.editRegion(region.id, region)
-        commit('editRegion', region)
+        commit('editRegion', data.data)
     },
 
     async deleteRegion({commit}, id) {

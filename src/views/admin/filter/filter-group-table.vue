@@ -8,13 +8,21 @@
                     </div>
                     <div class="card-body">
                         <div class="btn-popup pull-right">
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-original-title="test" data-target="#filterGroupModal">Добавить</button>
+                            <button type="button"
+                                    class="btn btn-secondary"
+                                    data-toggle="modal"
+                                    data-original-title="test"
+                                    data-target="#filterGroupModal"
+                                    @click="addFilter"
+                            >
+                                Добавить
+                            </button>
                             <filter-group-form/>
                         </div>
                         <div class="table-responsive">
                             <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
                                 <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
-                                    <a href="javascript:void(0)" @click="edit(row.item)">
+                                    <a href="javascript:void(0)" @click="editFilter(row.item)">
                                         <i class="fa fa-edit crud-button"></i>
                                     </a>
                                     /
@@ -38,6 +46,7 @@
 </template>
 
 <script>
+    import $ from 'jquery'
     import {mapGetters, mapActions} from 'vuex'
     import FilterGroupForm from "./filter-group-form";
     export default {
@@ -66,6 +75,11 @@
                 ]
             }
         },
+        watch: {
+          filters(val){
+              this.items = val
+          }
+        },
         computed: {
             ...mapGetters({
                 filters: 'filters/filterGroups'
@@ -77,8 +91,15 @@
                 deleteFilterGroup: 'filters/deleteFilterGroup',
                 editFilterGroup: 'filters/editFilterGroup',
             }),
-            edit (item) {
-
+            addFilter() {
+                this.$store.commit('setEditState', false)
+                this.$store.commit('setAddState', true)
+            },
+            editFilter(item){
+                this.$store.commit('setAddState', false)
+                this.$store.commit('setEditState', true)
+                this.$store.commit('filters/setFilterGroup', item)
+                $('#filterGroupModal').modal('show')
             },
             deleteItem (item) {
                 this.deleteFilterGroup(item.id)

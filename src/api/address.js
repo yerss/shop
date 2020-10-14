@@ -10,9 +10,7 @@ const addresses =  {
     },
     addAddress(address) {
         const url = `/addresses/`
-        return axios.post(this.api + url, {
-            ...address
-        })
+        return axios.post(this.api + url, address)
     },
     getAddress (id) {
         const url = `/addresses/${id}`

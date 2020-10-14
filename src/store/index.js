@@ -19,16 +19,27 @@ axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem(
 
 export default new Vuex.Store({
     state: {
-
+        editState: false,
+        addState: false,
     },
     getters: {
-
+        addState: state => {
+            return state.addState
+        },
+        editState: state => {
+            return state.editState
+        }
     },
     actions: {
 
     },
     mutations: {
-
+        setAddState(state, add){
+            state.addState = add
+        },
+        setEditState(state, edit){
+            state.editState = edit
+        }
     },
     modules: {
         products, cart, wishlist, categories, auth, filters, regions, cities, addresses, brands, users

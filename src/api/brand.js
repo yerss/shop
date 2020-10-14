@@ -9,9 +9,7 @@ const brands = {
     },
     addBrand (brand) {
         const url = `/brands/`
-        return axios.post(this.api + url, {
-            ...brand
-        })
+        return axios.post(this.api + url, brand)
     },
     getBrand (id) {
         const url = `/brands/${id}`

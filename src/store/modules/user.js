@@ -32,14 +32,14 @@ const actions = {
         let {
             data
         } = await users.addUser(user)
-        commit('addUser', user)
+        commit('addUser', data)
     },
 
     async editUser({commit}, user) {
         let {
             data
         } = await users.editUser(user.id, user)
-        commit('editUser', user)
+        commit('editUser', data)
     },
 
     async deleteUser({commit}, id) {

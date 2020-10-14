@@ -9,9 +9,7 @@ const cities = {
     },
     addCity (city) {
         const url = `/cities/`
-        return axios.post(this.api + url, {
-            ...city
-        })
+        return axios.post(this.api + url, city)
     },
     getCity (id) {
         const url = `/cities/${id}`

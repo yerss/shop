@@ -8,7 +8,13 @@
                     </div>
                     <div class="card-body">
                         <div class="btn-popup pull-right">
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-original-title="test" data-target="#filterValueModal">
+                            <button type="button"
+                                    class="btn btn-secondary"
+                                    data-toggle="modal"
+                                    data-original-title="test"
+                                    data-target="#filterValueModal"
+                                    @click="addFilter"
+                            >
                                 Добавить
                             </button>
                             <filter-value-form/>
@@ -16,11 +22,11 @@
                         <div class="table-responsive">
                             <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
                                 <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
-                                    <a>
+                                    <a @click="editFilter(row.item)">
                                         <i class="fa fa-edit crud-button"></i>
                                     </a>
                                     /
-                                    <a @click="deleteFilterValue(row.item.id)">
+                                    <a @click="deleteItem(row.item)">
                                         <i class="fa fa-trash crud-button"></i>
                                     </a>
                                 </template>
@@ -42,6 +48,7 @@
 <script>
     import {mapGetters, mapActions} from 'vuex'
     import FilterValueForm from "./filter-value-form";
+    import $ from "jquery";
     export default {
         name: "filter-value-table",
         components: {FilterValueForm},
@@ -56,7 +63,7 @@
                         sortable: true
                     },
                     {
-                        key: "filter_group_id",
+                        key: "filter_group.name",
                         label: 'Группа',
                         sortable: true
                     },
@@ -76,13 +83,13 @@
         async created() {
             await this.getFilterGroups()
             await this.getFilterValues().finally(()=>{
-                this.items = this.filterValues
+                this.items = this.filters
                 this.isBusy = false
             })
         },
         computed: {
             ...mapGetters({
-                filterValues: 'filters/filterValues'
+                filters: 'filters/filterValues'
             })
         },
         methods: {
@@ -90,7 +97,25 @@
                 getFilterValues: 'filters/getFilterValues',
                 getFilterGroups: 'filters/getFilterGroups',
                 deleteFilterValue: 'filters/deleteFilterValue'
-            })
+            }),
+            addFilter() {
+                this.$store.commit('setEditState', false)
+                this.$store.commit('setAddState', true)
+            },
+            editFilter(item){
+                this.$store.commit('setAddState', false)
+                this.$store.commit('setEditState', true)
+                this.$store.commit('filters/setFilterValue', item)
+                $('#filterValueModal').modal('show')
+            },
+            deleteItem (item) {
+                this.deleteFilterValue(item.id)
+            }
+        },
+        watch: {
+            filters(val){
+                this.items = val
+            }
         }
     }
 </script>

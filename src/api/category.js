@@ -9,9 +9,7 @@ const categories = {
     },
     addCategory (category) {
         const url = `/categories/`
-        return axios.post(this.api + url, {
-            ...category
-        })
+        return axios.post(this.api + url, category)
     },
     getCategory (id) {
         const url = `/categories/${id}`

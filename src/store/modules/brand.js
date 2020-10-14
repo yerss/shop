@@ -29,18 +29,17 @@ const actions = {
     },
 
     async addBrand({commit}, brand) {
-        console.log(brand)
         let {
             data
         } = await brands.addBrand(brand)
-        commit('addBrand', brand)
+        commit('addBrand', data.data)
     },
 
     async editBrand({commit}, brand) {
         let {
             data
         } = await brands.editBrand(brand.id, brand)
-        commit('editBrand', brand)
+        commit('editBrand', data.data)
     },
 
     async deleteBrand({commit}, id) {

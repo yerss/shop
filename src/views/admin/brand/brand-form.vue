@@ -50,7 +50,8 @@
         },
         computed: {
             ...mapGetters({
-
+                addState: 'addState',
+                editState: 'editState',
             })
         },
         methods: {
@@ -59,12 +60,13 @@
             }),
             addB () {
                 let formData = new FormData()
-                formData.append('image', this.file)
+                formData.append('image', this.image)
                 for (const [key, value] of Object.entries(this.brand)) {
                     if (typeof value === 'number' || typeof value === 'string') {
                         formData.append(key, value)
                     }
                 }
+                console.log(formData)
                 this.addBrand(formData)
             }
         }

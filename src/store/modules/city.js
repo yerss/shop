@@ -32,14 +32,14 @@ const actions = {
         let {
             data
         } = await cities.addCity(city)
-        commit('addCity', city)
+        commit('addCity', data.data)
     },
 
     async editCity({commit}, city) {
         let {
             data
         } = await cities.editCity(city.id, city)
-        commit('editCity', city)
+        commit('editCity', data.data)
     },
 
     async deleteCity({commit}, id) {

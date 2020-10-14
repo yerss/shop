@@ -1,6 +1,6 @@
 <template>
     <body>
-        <section>
+    <section>
         <section class="section-big-pt-space ratio_asos bg-light">
             <div class="collection-wrapper">
                 <div class="custom-container">
@@ -30,16 +30,39 @@
 </template>
 
 <script>
-import TableComponent from './components/table-component'
-import TableHeader from './components/table-header'
-import TableFooter from './components/table-footer'
-import FilterComponent from './components/filter-component'
-import NewProductsComponent from './components/new-products-component'
-export default {
-    name: "shop-layout",
-    components: {
-        NewProductsComponent, FilterComponent, TableFooter, TableHeader, TableComponent}
-}
+    import {mapActions, mapGetters} from 'vuex'
+    import TableComponent from './components/table-component'
+    import TableHeader from './components/table-header'
+    import TableFooter from './components/table-footer'
+    import FilterComponent from './components/filter-component'
+    import NewProductsComponent from './components/new-products-component'
+
+    export default {
+        name: "shop-layout",
+        components: {
+            NewProductsComponent,
+            FilterComponent,
+            TableFooter,
+            TableHeader,
+            TableComponent
+        },
+        data () {
+            return {
+
+            }
+        },
+        computed: {
+            ...mapGetters({
+
+            })
+        },
+        methods: {
+            ...mapActions({
+
+            })
+        }
+
+    }
 </script>
 
 <style scoped>

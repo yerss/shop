@@ -4,10 +4,10 @@
       <div class="product-box">
         <div class="product-imgbox">
           <div class="product-front">
-            <img :src="product.img_url" class="img-fluid  " alt="product">
+            <img :src="product.image" class="img-fluid  " alt="product">
           </div>
           <div class="product-back">
-            <img :src="product.img_url2" class="img-fluid  " alt="product">
+            <img :src="product.image" class="img-fluid  " alt="product">
           </div>
         </div>
         <div class="product-detail detail-center ">

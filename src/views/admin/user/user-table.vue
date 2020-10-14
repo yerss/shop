@@ -40,6 +40,7 @@
 <script>
     import {mapGetters, mapActions} from 'vuex'
     import UserForm from "./user-form";
+    import $ from 'jquery'
     export default {
         name: "user-table",
         components: {UserForm},
@@ -92,7 +93,10 @@
         methods: {
             ...mapActions({
                 getUsers: 'users/getUsers'
-            })
+            }),
+            edit(user) {
+                $('#userModal').modal('show')
+            }
         }
     }
 </script>

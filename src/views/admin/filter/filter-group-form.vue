@@ -3,7 +3,8 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title f-w-600" id="exampleModalLabel">Добавить группу фильтров</h5>
+                    <h5 v-if="addState" class="modal-title f-w-600">Добавить группу фильтров</h5>
+                    <h5 v-if="editState" class="modal-title f-w-600">Изменить группу фильтров</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">
@@ -17,7 +18,16 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="button" @click="addFilterGroup(filter)">Сохранить</button>
+                    <button v-if="addState"
+                            class="btn btn-primary"
+                            type="button"
+                            @click="addFilterGroup"
+                    >Сохранить</button>
+                    <button v-if="editState"
+                            class="btn btn-primary"
+                            type="button"
+                            @click="editFilterGroup"
+                    >Изменить</button>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Отменить</button>
                 </div>
             </div>
@@ -26,7 +36,8 @@
 </template>
 
 <script>
-    import {mapActions, mapGetters} from 'vuex'
+    import $ from 'jquery'
+    import {mapActions, mapGetters, mapState} from 'vuex'
     export default {
         name: "filter-group-form",
         data () {
@@ -34,16 +45,35 @@
                 filter: {}
             }
         },
-        created() {
-
+        mounted() {
         },
         methods: {
             ...mapActions({
-                addFilterGroup: 'filters/addFilterGroup'
-            })
+                addFilter: 'filters/addFilterGroup',
+                editFilter: 'filters/editFilterGroup'
+            }),
+            addFilterGroup(){
+                this.addFilter(this.filter).finally(()=>{
+                    $('#filterGroupModal').modal('toggle')
+                })
+            },
+            editFilterGroup(){
+                this.editFilter(this.filter).finally(()=>{
+                    $('#filterGroupModal').modal('toggle')
+                })
+            }
+        },
+        watch: {
+            filterGroup(val){
+                this.filter = Object.assign({}, val)
+            }
         },
         computed: {
-
+            ...mapGetters({
+                addState: 'addState',
+                editState: 'editState',
+                filterGroup: 'filters/filterGroup'
+            }),
         }
     }
 </script>

@@ -32,14 +32,14 @@ const actions = {
         let {
             data
         } = await products.addProduct(product)
-        commit('addProduct', product)
+        commit('addProduct', data.data)
     },
 
     async editProduct({commit}, product) {
         let {
             data
         } = await products.editProduct(product.id, product)
-        commit('editProduct', product)
+        commit('editProduct', data.data)
     },
 
     async deleteProduct({commit}, id) {

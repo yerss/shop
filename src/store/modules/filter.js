@@ -47,25 +47,25 @@ const actions = {
         let {
             data
         } = await filter.addFilterGroup(filterGroup);
-        commit('addFilterGroup', filterGroup)
+        commit('addFilterGroup', data.data)
     },
     async addFilterValue({commit}, filterValue){
         let {
             data
         } = await filter.addFilterValue(filterValue);
-        commit('addFilterValue', filterValue)
+        commit('addFilterValue', data.data)
     },
     async editFilterValue({commit}, filterValue) {
         let {
             data
         } = await filter.editFilterValue(filterValue.id, filterValue)
-        commit('editFilterValue', filterValue)
+        commit('editFilterValue', data.data)
     },
     async editFilterGroup({commit}, filterGroup){
         let {
             data
         } = await filter.editFilterGroup(filterGroup.id, filterGroup)
-        commit('editFilterGroup', filterGroup)
+        commit('editFilterGroup', data.data)
     },
     async deleteFilterGroup({commit}, id){
         await filter.deleteFilterGroup(id)
@@ -94,7 +94,7 @@ const mutations = {
         state.selected_group = filterGroup
     },
     setFilterValue (state, filterValue) {
-        state.selected_values = filterValue
+        state.selected_value = filterValue
     },
 
     addFilterGroup(state, filterGroup) {
@@ -104,7 +104,7 @@ const mutations = {
     addFilterValue(state, filterValue) {
         state.list_value.unshift(filterValue)
     },
-    editFilterGroups(state, filterGroup) {
+    editFilterGroup(state, filterGroup) {
         const filterGroups = [...state.list_group]
         const index = filterGroups.findIndex(p => p.id === filterGroup.id)
         if (index > -1) {

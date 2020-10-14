@@ -17,9 +17,7 @@ const products = {
     },
     addProduct (product) {
         const url = `/products/`
-        return axios.post(this.api + url, {
-            ...product
-        })
+        return axios.post(this.api + url, product)
     },
     getProduct (id) {
         const url = `/products/${id}`

@@ -3,7 +3,8 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title f-w-600" id="exampleModalLabel">Добавить фильтр</h5>
+                    <h5 v-if="addState" class="modal-title f-w-600" >Добавить фильтр</h5>
+                    <h5 v-if="editState" class="modal-title f-w-600" >Изменить фильтр</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">
@@ -30,7 +31,16 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" type="button" @click="addFilterValue(filter)">Сохранить</button>
+                    <button v-if="addState"
+                            class="btn btn-primary"
+                            type="button"
+                            @click="addFilterValue"
+                    >Сохранить</button>
+                    <button v-if="editState"
+                            class="btn btn-primary"
+                            type="button"
+                            @click="editFilterValue"
+                    >Изменить</button>
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Отменить</button>
                 </div>
             </div>
@@ -40,6 +50,7 @@
 
 <script>
     import {mapGetters, mapActions} from 'vuex'
+    import $ from "jquery";
     export default {
         name: "filter-value-form",
         data () {
@@ -49,13 +60,32 @@
         },
         computed: {
             ...mapGetters({
+                filterValue: 'filters/filterValue',
+                addState: 'addState',
+                editState: 'editState',
                 filterGroups: 'filters/filterGroups'
             })
         },
         methods: {
             ...mapActions({
-                addFilterValue: 'filters/addFilterValue'
-            })
+                addFilter: 'filters/addFilterValue',
+                editFilter: 'filters/editFilterValue'
+            }),
+            addFilterValue(){
+                this.addFilter(this.filter).finally(()=>{
+                    $('#filterValueModal').modal('toggle')
+                })
+            },
+            editFilterValue(){
+                this.editFilter(this.filter).finally(()=>{
+                    $('#filterValueModal').modal('toggle')
+                })
+            }
+        },
+        watch: {
+            filterValue(val){
+                this.filter = Object.assign({}, val)
+            }
         }
     }
 </script>
