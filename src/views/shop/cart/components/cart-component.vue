@@ -53,7 +53,7 @@ export default {
     }),
     total () {
       return Math.round(this.products.reduce((accumulator, currentValue) => {
-        return accumulator + (currentValue.quantity * currentValue.price)
+        return accumulator + (currentValue.pieces * currentValue.price)
       }, 0))
     }
   }

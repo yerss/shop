@@ -39,12 +39,12 @@ const actions = {
 
 const mutations = {
     addProduct(state, product) {
-        product.quantity = 1
+        product.pieces = 1
         state.products.push(product)
     },
     incrementItemQuantity (state, id) {
         let cartItem = state.products.find(p => p.id === id)
-        cartItem.quantity+=1
+        cartItem.pieces+=1
     },
     deleteProduct(state, id) {
         const products = [...state.products]

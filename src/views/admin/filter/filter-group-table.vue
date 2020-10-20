@@ -20,7 +20,7 @@
                             <filter-group-form/>
                         </div>
                         <div class="table-responsive">
-                            <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
+                            <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined striped bordered>
                                 <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
                                     <a href="javascript:void(0)" @click="editFilter(row.item)">
                                         <i class="fa fa-edit crud-button"></i>

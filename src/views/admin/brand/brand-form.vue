@@ -66,7 +66,6 @@
                         formData.append(key, value)
                     }
                 }
-                console.log(formData)
                 this.addBrand(formData)
             }
         }

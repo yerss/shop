@@ -53,6 +53,7 @@ const mutations = {
         state.list = data
     },
     setProduct(state, product) {
+        product.pieces = 1
         state.selected = product
     },
     addProduct(state, product) {

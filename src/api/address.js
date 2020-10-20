@@ -16,10 +16,10 @@ const addresses =  {
         const url = `/addresses/${id}`
         return axios.get(this.api + url, {})
     },
-    editAddress (id, product) {
+    editAddress (id, address) {
         const url = `/addresses/${id}`
         return axios.put(this.api + url, {
-            ...product
+            ...address
         })
     },
     deleteAddress (id) {

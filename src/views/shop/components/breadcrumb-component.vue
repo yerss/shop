@@ -1,5 +1,5 @@
 <template>
-    <div class="breadcrumb-main ">
+    <div class="breadcrumb-main " v-if="name !== '' || name !== '/' ">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -9,7 +9,7 @@
                             <ul>
                                 <li><a href="#">home</a></li>
                                 <li><i class="fa fa-angle-double-right"></i></li>
-                                <li><a href="#">category</a></li>
+                                <li><a href="#">{{this.name}}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -21,7 +21,39 @@
 
 <script>
     export default {
-        name: "breadcrumb-component"
+        name: "breadcrumb-component",
+        data () {
+          return {
+              name: ''
+          }
+        },
+        computed: {
+
+        },
+        watch:{
+            $route(path) {
+                switch (path.name) {
+                    case 'news':
+                        this.name = 'NEWS'
+                        break
+                    case 'categories':
+                        this.name = 'CATEGORIES'
+                        break
+                    case 'shop_catalog':
+                        this.name = 'PRODUCTS'
+                        break
+                    case 'about_us':
+                        this.name = 'ABOUT US'
+                        break
+                    case 'profile':
+                        this.name = 'PROFILE'
+                        break
+                    case 'shop_content':
+                        this.name = ''
+                        break
+                }
+            }
+        }
     }
 </script>
 

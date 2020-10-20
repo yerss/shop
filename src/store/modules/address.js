@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 const state = () => ({
     selected: {},
-    list: []
+    list: [],
+    address_to: {}
 })
 
 const getters = {
@@ -15,6 +16,9 @@ const getters = {
     },
     addresses: state => {
         return state.list
+    },
+    address_to: state => {
+        return state.address_to
     }
 }
 
@@ -33,6 +37,7 @@ const actions = {
             data
         } = await addresses.addAddress(address)
         commit('addAddress', data.data)
+        return data.data
     },
 
     async editAddress({commit}, address) {
@@ -49,6 +54,9 @@ const actions = {
 }
 
 const mutations = {
+    setAddressTo(state, data) {
+        state.address_to = data
+    },
     setAddresses(state, data) {
         state.list = data
     },

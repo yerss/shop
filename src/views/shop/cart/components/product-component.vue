@@ -2,14 +2,14 @@
   <tbody>
   <tr>
     <td>
-      <a href="#"><img :src="product.url" alt="cart"  class=" "></a>
+      <a href="#"><img :src="product.image" alt="cart"  class=" "></a>
     </td>
     <td><a href="#">{{ product.name }}</a>
       <div class="mobile-cart-content row">
         <div class="col-xs-3">
           <div class="qty-box">
             <div class="input-group">
-              <input type="text" name="quantity" class="form-control input-number" v-model="product.quantity">
+              <input type="text" name="pieces" class="form-control input-number" v-model="product.pieces">
             </div>
           </div>
         </div>
@@ -24,13 +24,13 @@
     <td>
       <div class="qty-box">
         <div class="input-group">
-          <input type="number" name="quantity" class="form-control input-number" v-model="product.quantity">
+          <input type="number" name="pieces" class="form-control input-number" v-model="product.pieces">
         </div>
       </div>
     </td>
     <td @click="deleteItem()"><a href="#" class="icon"><i class="ti-close"></i></a></td>
     <td>
-      <h2 class="td-color">$ {{product.quantity * product.price}}</h2></td>
+      <h2 class="td-color">$ {{product.pieces * product.price}}</h2></td>
   </tr>
   </tbody>
 </template>

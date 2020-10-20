@@ -3,6 +3,10 @@ import axios from 'axios'
 const users = {
     api: 'http://localhost:8000/api',
 
+    getUserProfile () {
+        const url = '/users/profile/'
+        return axios.get(this.api + url, {})
+    },
     getUsers () {
         const url = '/users/'
         return axios.get(this.api + url, {})

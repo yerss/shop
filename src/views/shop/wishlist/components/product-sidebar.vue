@@ -2,14 +2,14 @@
   <li>
     <div class="media">
       <a href="#">
-        <img alt="" class="mr-3" :src="product.img_url">
+        <img alt="" class="mr-3" :src="product.image">
       </a>
       <div class="media-body">
         <a href="#">
           <h4>{{product.name}}</h4>
         </a>
         <h4>
-          <span>{{product.quantity}} x $ {{product.price}}</span>
+          <span>{{product.pieces}} x $ {{product.price}}</span>
         </h4>
       </div>
     </div>

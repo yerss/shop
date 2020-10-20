@@ -15,7 +15,7 @@
             :key="index"
         >
           <td>
-            <a href="#"><img :src="p.img_url" alt="product" class="img-fluid"></a>
+            <a href="#"><img :src="p.image" alt="product" class="img-fluid"></a>
           </td>
           <td><a href="#">{{p.name}}</a>
             <div class="mobile-cart-content row">

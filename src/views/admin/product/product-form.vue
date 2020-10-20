@@ -181,6 +181,8 @@
                     formData.append(key, value)
                 }
                 this.addProduct(formData)
+                this.product = {}
+
             },
             fileAdded(file) {
                 this.image = file

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 import auth from '../../api/login'
-// import users from '../../api/users'
+import users from '../../api/users'
 // import {parseJwt} from '@/helpers'
 Vue.use(Vuex)
 
@@ -39,7 +39,7 @@ const actions = {
                 token: token,
                 role: role
             })
-            // dispatch('getCurrentUser', parseJwt(token).user_id)
+            dispatch('getCurrentUser')
         } catch (err) {
             console.log(err)
         }
@@ -69,14 +69,14 @@ const actions = {
             resolve()
         })
     },
-    // async getCurrentUser ({commit}, userId) {
-    //     try {
-    //         const res = await users.getUserInfo(userId)
-    //         commit('setCurrentUser', res.data)
-    //     } catch (e) {
-    //         console.error(e.message)
-    //     }
-    // }
+    async getCurrentUser ({commit}) {
+        try {
+            const res = await users.getUserProfile()
+            commit('setCurrentUser', res.data.data)
+        } catch (e) {
+            console.error(e.message)
+        }
+    }
 }
 
 

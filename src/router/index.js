@@ -14,6 +14,8 @@ const ShopCheckout = () => import('@/views/shop/checkout/shop-checkout')
 const ShopCategories = () => import('@/views/shop/categories/shop-categories')
 const AboutUsComponent = () => import('@/views/shop/components/about-us-component')
 const NewsComponent = () => import('@/views/shop/news/news-component')
+const MyOrders = () => import('@/views/shop/order/order-history')
+const ForgetPassword = () => import('@/views/shop/shop-forget-password')
 
 const AdminMainComponent = () => import('@/views/admin/main-layout')
 const AdminDashboard = () => import('@/views/admin/dashboard')
@@ -180,24 +182,16 @@ let router = new Router({
                     path: 'cart',
                     name: 'cart',
                     component: ShopCart,
-                    beforeEnter: (to, from, next) => {
-                        document.getElementById("cart_side").classList.remove('open-side')
-                        next()
-                    }
                 },
                 {
                     path: 'wishlist',
                     name: 'wishlist',
                     component: ShopWishlist,
-                    beforeEnter: (to, from, next) => {
-                        document.getElementById("wishlist_side").classList.remove('open-side')
-                        next()
-                    }
                 },
                 {
                     path: 'checkout',
                     name: 'checkout',
-                    component: ShopCheckout
+                    component: ShopCheckout,
                 },
                 {
                     path: 'profile',
@@ -209,7 +203,16 @@ let router = new Router({
                     name: 'categories',
                     component: ShopCategories
                 },
-
+                {
+                    path: 'my-orders',
+                    name: 'my-orders',
+                    component: MyOrders
+                },
+                {
+                    path: 'reset-password',
+                    name: 'reset-password',
+                    component: ForgetPassword
+                },
             ]
         },
 

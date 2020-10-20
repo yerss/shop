@@ -2,24 +2,43 @@
     <section class="collection section-big-py-space ratio_square bg-light">
         <div class="container">
             <div class="row partition-collection section-big-pt-space">
-                <div class="col-lg-3 col-md-6 category">
-                    <div class="collection-block">
-                        <div><img src="../../../assets/images/collection/8.jpg" class="img-fluid  bg-img" alt=""></div>
-                        <div class="collection-content">
-                            <h3>fashion</h3>
-                            <a href="category-page(left-sidebar).html" class="btn btn-rounded">Show</a>
-                        </div>
-                    </div>
-                </div>
-
+                <category v-for="(c, index) in items" :key="index" :category="c"/>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+    import {mapGetters, mapActions} from 'vuex'
+    import Category from './components/category'
     export default {
-        name: "shop-categories"
+        name: "shop-categories",
+        components: {
+            Category
+        },
+        data () {
+            return {
+                items: []
+            }
+        },
+        watch: {
+            categories (val) {
+                this.items = val
+            }
+        },
+        computed: {
+            ...mapGetters({
+                categories: 'categories/categories'
+            })
+        },
+        methods: {
+            ...mapActions({
+                getCategories: 'categories/getCategories'
+            })
+        },
+        async created () {
+            await this.getCategories()
+        }
     }
 </script>
 

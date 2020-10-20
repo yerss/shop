@@ -55,7 +55,7 @@
                         sortable: true
                     },
                     {
-                        key: "region_id",
+                        key: "region.name",
                         label: 'Регион',
                         sortable: true
                     },
