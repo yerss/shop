@@ -12,10 +12,12 @@
         components: {},
         async mounted() {
             await this.getUserProfile()
+            await this.getProducts()
         },
         methods: {
             ...mapActions({
-                getUserProfile: 'auth/getCurrentUser'
+                getUserProfile: 'auth/getCurrentUser',
+                getProducts: 'wishlist/getProducts'
             })
         }
     }

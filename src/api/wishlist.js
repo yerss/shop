@@ -9,9 +9,7 @@ const likes = {
     },
     addLike (id) {
         const url = `/products/${id}/like/`
-        return axios.post(this.api + url, {
-            ...like
-        })
+        return axios.post(this.api + url, {})
     },
     deleteLike (id) {
         const url = `/products/${id}/like/`

@@ -24,11 +24,11 @@ const actions = {
         } = await wishlist.getLikes()
         commit('setProducts', data.data)
     },
-    async addProduct({commit}, id) {
+    async addProduct({commit}, product) {
         let {
             data
-        } = await wishlist.addLike(id)
-        commit('addProduct', data.data)
+        } = await wishlist.addLike(product.id)
+        commit('addProduct', product)
     },
     async deleteProduct({commit}, id) {
         await wishlist.deleteLike(id)

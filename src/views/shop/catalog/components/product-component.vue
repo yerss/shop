@@ -44,10 +44,10 @@
                                 @click="addToCart(product)">
                             <i class="ti-bag"></i>
                         </button>
-                        <a href="javascript:void(0)" title="Добавить в хочу">
+                        <a @click="addToWishlist(product)" href="javascript:void(0)" title="Добавить в хочу">
                             <i class="ti-heart" aria-hidden="true"></i>
                         </a>
-                        <a @click.prevent="quickView(product)" href="#" data-toggle="modal" data-target="#quick-view" title="Быстрый просмотр">
+                        <a @click.prevent="quickView(product)" href="javascript:void(0)" data-toggle="modal" data-target="#quick-view" title="Быстрый просмотр">
                             <i class="ti-search" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -73,7 +73,7 @@
         methods: {
             ...mapActions({
                 addToCart: 'cart/addProduct',
-                addToWishlist: ''
+                addToWishlist: 'wishlist/addProduct'
             }),
             quickView(product){
               this.$store.commit('products/setProduct', product)

@@ -13,9 +13,9 @@
             <div class="cart_media">
                 <ul class="cart_product">
                     <product-sidebar
-                        v-for="(p, index) in products"
-                        :product="p"
-                        :key="index"
+                            v-for="(p, index) in items"
+                            :product="p"
+                            :key="index"
                     />
                 </ul>
                 <ul class="cart_total">
@@ -26,7 +26,8 @@
                     </li>
                     <li>
                         <div class="buttons">
-                          <router-link to="/wishlist" class="btn btn-normal btn-block  view-cart">view wislist</router-link>
+                            <router-link to="/wishlist" class="btn btn-normal btn-block  view-cart">view wislist
+                            </router-link>
                         </div>
                     </li>
                 </ul>
@@ -36,27 +37,38 @@
 </template>
 
 <script>
-import ProductSidebar from "@/views/shop/wishlist/components/product-sidebar";
-import {mapGetters} from "vuex";
-export default {
-  name: "wishlist-component",
-  components: {ProductSidebar},
-  methods: {
-    closeWishlist() {
-      document.getElementById("wishlist_side").classList.remove('open-side');
-    },
-  },
-  computed: {
-    ...mapGetters({
-      products: 'wishlist/products'
-    }),
-    total () {
-      return Math.round(this.products.reduce((accumulator, currentValue) => {
-        return accumulator + (currentValue.price)
-      }, 0))
+    import ProductSidebar from "@/views/shop/wishlist/components/product-sidebar";
+    import {mapGetters} from "vuex";
+
+    export default {
+        name: "wishlist-component",
+        components: {ProductSidebar},
+        data() {
+            return {
+                items: []
+            }
+        },
+        methods: {
+            closeWishlist() {
+                document.getElementById("wishlist_side").classList.remove('open-side');
+            },
+        },
+        watch: {
+            products (val) {
+                this.items = val
+            }
+        },
+        computed: {
+            ...mapGetters({
+                products: 'wishlist/products'
+            }),
+            total() {
+                return Math.round(this.products.reduce((accumulator, currentValue) => {
+                    return accumulator + (currentValue.price)
+                }, 0))
+            }
+        },
     }
-  }
-}
 </script>
 
 <style scoped>
