@@ -10,7 +10,7 @@
                             <ul class="nav-slide">
                                 <li>
                                     <div class="nav-sm-back">
-                                        back <i class="fa fa-angle-right pl-2"></i>
+                                        Назад <i class="fa fa-angle-right pl-2"></i>
                                     </div>
                                 </li>
                                 <li><a href="#">western ware</a></li>
@@ -35,7 +35,7 @@
                                 </li>
                                 <li>
                                     <a class="mor-slide-click">
-                                        mor category
+                                        Больше
                                         <i class="fa fa-angle-down pro-down"></i>
                                         <i class="fa fa-angle-up pro-up"></i>
                                     </a>
@@ -54,7 +54,7 @@
                                         <div class="input-group-prepend">
                                             <span class="search"><i class="fa fa-search"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Search a Product">
+                                        <input type="text" class="form-control" placeholder="Поиск...">
                                     </div>
                                 </form>
                             </div>
@@ -71,8 +71,8 @@
                                 </ul>
                             </div>
                             <div class="cart-item">
-                                <h5>shopping</h5>
-                                <h5>cart</h5>
+                                <h5>корзина</h5>
+                                <h5></h5>
                             </div>
                         </div>
                         <div class="menu-nav">
@@ -97,7 +97,7 @@
                                             <button class="navbar-toggler" type="button">
                                                 <span class="navbar-icon"><i class="fa fa-arrow-down"></i></span>
                                             </button>
-                                            <h5 class="mb-0  text-white title-font">Shop by category</h5>
+                                            <h5 class="mb-0  text-white title-font">Список категории</h5>
                                         </nav>
                                         <div class="collapse  nav-desk" id="navbarToggleExternalContent">
                                             <ul class="nav-cat title-font">
@@ -108,7 +108,7 @@
                                                     </ul>
                                                 </li>
                                                 <li>
-                                                    <a class="mor-slide-click">mor category <i
+                                                    <a class="mor-slide-click">больше <i
                                                             class="fa fa-angle-down pro-down"></i><i
                                                             class="fa fa-angle-up pro-up"></i></a>
                                                 </li>
@@ -121,23 +121,20 @@
                                         <div class="toggle-nav"><i class="fa fa-bars sidebar-bar"></i></div>
                                         <ul id="main-menu" class="sm pixelstrap sm-horizontal">
                                             <li>
-                                                <div class="mobile-back text-right">Back<i
+                                                <div class="mobile-back text-right">Назад<i
                                                         class="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
                                             </li>
                                             <li>
-                                                <router-link class="dark-menu-item" to="/">Home</router-link>
+                                                <router-link class="dark-menu-item" to="/">Главная</router-link>
                                             </li>
                                             <li>
-                                                <router-link class="dark-menu-item" to="/categories">Shop</router-link>
+                                                <router-link class="dark-menu-item" to="/categories">Категории</router-link>
                                             </li>
                                             <li class="mega">
-                                                <router-link class="dark-menu-item" to="/shop">Products</router-link>
+                                                <router-link class="dark-menu-item" to="/shop">Продукты</router-link>
                                             </li>
                                             <li>
-                                                <router-link class="dark-menu-item" to="/news">News</router-link>
-                                            </li>
-                                            <li>
-                                                <router-link class="dark-menu-item" to="/about_us">About us
+                                                <router-link class="dark-menu-item" to="/about_us">О нас
                                                 </router-link>
                                             </li>
                                         </ul>
@@ -153,7 +150,7 @@
                                         <li class="mobile-wishlist" @click="openWishlist()">
                                             <a><i class="icon-heart"></i>
                                                 <div class="cart-item">
-                                                    <div>{{count_wishlist}} item<span>wishlist</span></div>
+                                                    <div>{{count_wishlist}} Предмет<span>Избранное</span></div>
                                                 </div>
                                             </a></li>
                                         <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>
@@ -190,7 +187,7 @@
                                 <div class="contact-block">
                                     <div>
                                         <i class="fa fa-volume-control-phone"></i>
-                                        <span>call us<span>123-456-76890</span></span>
+                                        <span>Служба поддержки<span>123-456-76890</span></span>
                                     </div>
                                 </div>
                                 <div class="btn-group">
@@ -199,8 +196,8 @@
                                             <i class="icon-gift"></i>
                                         </div>
                                         <div class="gift-offer">
-                                            <p>gift box</p>
-                                            <span>Festivel Offer</span>
+                                            <p>Купоны</p>
+                                            <span>Скидки %</span>
                                         </div>
                                     </div>
                                     <div class="dropdown-menu gift-dropdown">

@@ -4,7 +4,7 @@
         <shop-services/>
         <categories-component/>
         <div class="title1 section-my-space">
-            <h4>Special Products</h4>
+            <h4>Специальные продукты</h4>
         </div>
         <products-component/>
         <section class="contact-banner contact-banner-inverse">
@@ -13,7 +13,7 @@
                     <div class="col">
                         <div class="contact-banner-contain">
                             <div class="contact-banner-img"><img src="../../assets/images/layout-1/call-img.png" class="  img-fluid" alt="call-banner"></div>
-                            <div> <h3>if you have any question please call us</h3></div>
+                            <div> <h3>ГОРЯЧАЯЯ ЛИНИЯ</h3></div>
                             <div><h2>123-456-7890</h2></div>
                         </div>
                     </div>

@@ -15,10 +15,10 @@
                                 <div class="slider-banner-contain">
                                     <div>
                                         <h1>mi<span>Mobile</span></h1>
-                                        <h4>fast and light</h4>
+                                        <h4>Быстрый и легкий</h4>
                                         <h2>Pixel Perfect Deal Camera</h2>
                                         <a class="btn btn-normal">
-                                            Shop Now
+                                            КУПИТЬ СЕЙЧАС
                                         </a>
                                     </div>
                                 </div>
@@ -34,11 +34,11 @@
                                 </div>
                                 <div class="slider-banner-contain">
                                     <div>
-                                        <h1>big<span>Sale</span></h1>
-                                        <h4>now start at $99</h4>
-                                        <h2>50% off</h2>
+                                        <h1>Большие<span>скидки</span></h1>
+                                        <h4>Цены от $99</h4>
+                                        <h2>50% скидки</h2>
                                         <a class="btn btn-normal">
-                                            Shop Now
+                                            Купить сейчас
                                         </a>
                                     </div>
                                 </div>
@@ -54,11 +54,11 @@
                                 </div>
                                 <div class="slider-banner-contain">
                                     <div>
-                                        <h1>camera<span>Sale</span></h1>
-                                        <h4>now start at $79</h4>
-                                        <h2>70% off today</h2>
+                                        <h1>camera<span></span></h1>
+                                        <h4>Прямо сейчас от $79</h4>
+                                        <h2>70% скидки сегодня</h2>
                                         <a class="btn btn-normal">
-                                            Shop Now
+                                             Купить сейчас
                                         </a>
                                     </div>
                                 </div>
