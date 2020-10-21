@@ -6,7 +6,7 @@
       </a>
       <div class="media-body">
         <a href="#">
-          <h4>{{product.name}}</h4>
+          <h4>{{product.alias}}</h4>
         </a>
         <h4>
           <span>{{product.pieces}} x $ {{product.price}}</span>
