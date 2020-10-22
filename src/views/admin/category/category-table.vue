@@ -113,6 +113,11 @@
                 getCategories: 'categories/getCategories'
             })
         },
+      watch: {
+        categories (val) {
+          this.items = val
+        }
+      },
         mounted() {
             this.getCategories().finally(() => {
                 this.items = this.categories

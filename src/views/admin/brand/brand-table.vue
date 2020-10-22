@@ -83,6 +83,11 @@
                 ]
             }
         },
+      watch:{
+        brands (val) {
+          this.items = val
+        }
+      },
         mounted() {
             this.getBrands().finally(() => {
                 this.items = this.brands

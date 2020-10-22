@@ -78,6 +78,11 @@
 
             }
         },
+      watch: {
+          users (val) {
+            this.items = val
+          }
+      },
         mounted() {
             this.getUsers().finally(() => {
                     this.items = this.users
