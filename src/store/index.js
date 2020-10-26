@@ -29,7 +29,8 @@ export default new Vuex.Store({
         },
         editState: state => {
             return state.editState
-        }
+        },
+
     },
     actions: {
 

@@ -3,9 +3,9 @@ import axios from 'axios'
 const products = {
     api: 'http://localhost:8000/api',
 
-    getProducts () {
+    getProducts (params) {
         const url = '/products/'
-        return axios.get(this.api + url, {})
+        return axios.get(this.api + url, {params})
     },
     getProductsFilter () {
         const url = '/products/'

@@ -7,7 +7,8 @@ Vue.use(Vuex)
 const state = () => ({
     selected: {},
     list: [],
-    address_to: {}
+    address_to: {},
+    pagination: {}
 })
 
 const getters = {
@@ -19,6 +20,9 @@ const getters = {
     },
     address_to: state => {
         return state.address_to
+    },
+    pagination: state => {
+        return state.pagination
     }
 }
 
@@ -83,6 +87,9 @@ const mutations = {
             addresses.splice(index, 1)
         }
         state.list = addresses
+    },
+    setPagination(state, data){
+        state.pagination = data
     }
 }
 
