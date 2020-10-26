@@ -153,7 +153,7 @@
                                                     <div>{{count_wishlist}} Предмет<span>Избранное</span></div>
                                                 </div>
                                             </a></li>
-                                        <li class="mobile-search"><a href="#"><i class="icon-search"></i></a>
+                                        <li class="mobile-search"><a href="javascript:void(0)"><i class="icon-search"></i></a>
                                             <div class="search-overlay">
                                                 <div>
                                                     <span class="close-mobile-search">×</span>

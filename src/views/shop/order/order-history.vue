@@ -16,7 +16,7 @@
                         <tbody>
                         <tr>
                             <td>
-                                <a href="#"><img src="../../../assets/images/product-sidebar/001.jpg" alt="product" class="img-fluid  "></a>
+                                <a href="javascript:void(0)"><img src="../../../assets/images/product-sidebar/001.jpg" alt="product" class="img-fluid  "></a>
                             </td>
                             <td><a href="#">order no: <span class="dark-data">15454841</span> <br>cotton shirt</a>
                                 <div class="mobile-cart-content row">

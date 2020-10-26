@@ -2,9 +2,9 @@
   <tbody>
   <tr>
     <td>
-      <a href="#"><img :src="product.image" alt="cart"  class=" "></a>
+      <a href="javascript:void(0)"><img :src="product.image" alt="cart"  class=" "></a>
     </td>
-    <td><a href="#">{{ product.name }}</a>
+    <td><a href="javascript:void(0)">{{ product.name }}</a>
       <div class="mobile-cart-content row">
         <div class="col-xs-3">
           <div class="qty-box">
@@ -16,7 +16,7 @@
         <div class="col-xs-3">
           <h2 class="td-color">$ {{product.price}}</h2></div>
         <div class="col-xs-3">
-          <h2 class="td-color" @click="deleteItem()"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
+          <h2 class="td-color" @click="deleteItem()"><a href="javascript:void(0)" class="icon"><i class="ti-close"></i></a></h2></div>
       </div>
     </td>
     <td>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </td>
-    <td @click="deleteItem()"><a href="#" class="icon"><i class="ti-close"></i></a></td>
+    <td @click="deleteItem()"><a href="javascript:void(0)" class="icon"><i class="ti-close"></i></a></td>
     <td>
       <h2 class="td-color">$ {{product.pieces * product.price}}</h2></td>
   </tr>

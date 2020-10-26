@@ -3,7 +3,7 @@
         <a href="javascript:void(0)" class="overlay" @click="closeWishlist()"></a>
         <div class="cart-inner">
             <div class="cart_top">
-                <h3>my wishlist</h3>
+                <h3>Избранное</h3>
                 <div class="close-cart">
                     <a href="javascript:void(0)" @click="closeWishlist()">
                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -21,12 +21,12 @@
                 <ul class="cart_total">
                     <li>
                         <div class="total">
-                            <h5>subtotal : <span>$ {{total}}</span></h5>
+                            <h5>сумма : <span>$ {{total}}</span></h5>
                         </div>
                     </li>
                     <li>
                         <div class="buttons">
-                            <router-link to="/wishlist" class="btn btn-normal btn-block  view-cart">view wislist
+                            <router-link to="/wishlist" class="btn btn-normal btn-block  view-cart">Посмотреть избранное
                             </router-link>
                         </div>
                     </li>

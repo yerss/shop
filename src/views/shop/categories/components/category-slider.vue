@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="category-contain">
-            <a href="#">
+            <a href="javascript:void(0)">
                 <div class="img-wrapper">
                     <img src="../../../../assets/images/layout-1/rounded-cat/1.png" alt="category  " class="img-fluid">
                 </div>

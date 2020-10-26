@@ -8,8 +8,8 @@
             </div>
             <div class="row wishlist-buttons">
                 <div class="col-12">
-                    <router-link to="/shop" class="btn btn-normal">continue shopping</router-link>
-                    <router-link to="/checkout" class="btn btn-normal">check out</router-link>
+                    <router-link to="/shop" class="btn btn-normal">Продолжить покупки</router-link>
+                    <router-link to="/checkout" class="btn btn-normal">Оформить заказ</router-link>
                 </div>
             </div>
         </div>

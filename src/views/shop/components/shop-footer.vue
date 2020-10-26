@@ -13,11 +13,11 @@
                   <div class="footer-detail">
                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
                     <ul class="paymant-bottom">
-                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/3.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/4.png" class="img-fluid" alt="pay"></a></li>
-                      <li><a href="#"><img src="../../../assets/images/layout-1/pay/5.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="javascript:void(0)"><img src="../../../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="javascript:void(0)"><img src="../../../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="javascript:void(0)"><img src="../../../assets/images/layout-1/pay/3.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="javascript:void(0)"><img src="../../../assets/images/layout-1/pay/4.png" class="img-fluid" alt="pay"></a></li>
+                      <li><a href="javascript:void(0)"><img src="../../../assets/images/layout-1/pay/5.png" class="img-fluid" alt="pay"></a></li>
                     </ul>
                   </div>
                 </div>
@@ -63,11 +63,11 @@
                               </div>
                               <div class="footer-contant">
                                 <ul>
-                                  <li><a href="#">about us</a></li>
-                                  <li><a href="#">contact us</a></li>
-                                  <li><a href="#">terms & conditions</a></li>
-                                  <li><a href="#">returns & exchanges</a></li>
-                                  <li><a href="#">shipping & delivery</a></li>
+                                  <li><a href="javascript:void(0)">about us</a></li>
+                                  <li><a href="javascript:void(0)">contact us</a></li>
+                                  <li><a href="javascript:void(0)">terms & conditions</a></li>
+                                  <li><a href="javascript:void(0)">returns & exchanges</a></li>
+                                  <li><a href="javascript:void(0)">shipping & delivery</a></li>
                                 </ul>
                               </div>
                             </div>
@@ -79,11 +79,11 @@
                               </div>
                               <div class="footer-contant">
                                 <ul>
-                                  <li><a href="#">store location</a></li>
-                                  <li><a href="#"> my account</a></li>
-                                  <li><a href="#"> orders tracking</a></li>
-                                  <li><a href="#"> size guide</a></li>
-                                  <li><a href="#">FAQ </a></li>
+                                  <li><a href="javascript:void(0)">store location</a></li>
+                                  <li><a href="javascript:void(0)"> my account</a></li>
+                                  <li><a href="javascript:void(0)"> orders tracking</a></li>
+                                  <li><a href="javascript:void(0)"> size guide</a></li>
+                                  <li><a href="javascript:void(0)">FAQ </a></li>
                                 </ul>
                               </div>
                             </div>
@@ -130,11 +130,11 @@
               <div class="sosiyal-block" >
                 <h6>follow us</h6>
                 <ul class="sosiyal">
-                  <li><a href="#"><i class="fa fa-facebook" ></i></a></li>
-                  <li><a href="#"><i class="fa fa-google-plus" ></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter" ></i></a></li>
-                  <li><a href="#"><i class="fa fa-instagram" ></i></a></li>
-                  <li><a href="#"><i class="fa fa-rss" ></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-facebook" ></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-google-plus" ></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-twitter" ></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-instagram" ></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-rss" ></i></a></li>
                 </ul>
               </div>
             </div>

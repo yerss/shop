@@ -3,7 +3,7 @@
         <a href="javascript:void(0)" class="overlay" @click="closeCart()"></a>
         <div class="cart-inner">
             <div class="cart_top">
-                <h3>my cart</h3>
+                <h3>Моя корзина</h3>
                 <div class="close-cart">
                     <a href="javascript:void(0)" @click="closeCart()">
                         <i class="fa fa-times" aria-hidden="true"></i>
@@ -21,13 +21,12 @@
                 <ul class="cart_total">
                     <li>
                         <div class="total">
-                            <h5>subtotal : <span>$ {{total}}</span></h5>
+                            <h5>Сумма : <span>$ {{total}}</span></h5>
                         </div>
                     </li>
                     <li>
                         <div class="buttons">
-                          <router-link to="/cart" class="btn btn-normal btn-xs view-cart">view cart</router-link>
-                          <router-link to="/checkout" class="btn btn-normal btn-xs checkout">checkout</router-link>
+                          <router-link to="/cart" class="btn btn-normal btn-xs view-cart">Посмотреть корзину</router-link>
                         </div>
                     </li>
                 </ul>

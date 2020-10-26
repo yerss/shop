@@ -31,7 +31,7 @@ const actions = {
         if (!cartItem) {
             commit('addProduct', product)
         }else{
-            commit('incrementItemQuantity', cartItem.id)
+            commit('incrementItemQuantity', cartItem)
         }
     }
 }
@@ -39,12 +39,19 @@ const actions = {
 
 const mutations = {
     addProduct(state, product) {
-        product.pieces = 1
+        product.pieces = product.pieces ?? 1
         state.products.push(product)
     },
-    incrementItemQuantity (state, id) {
-        let cartItem = state.products.find(p => p.id === id)
-        cartItem.pieces+=1
+    incrementItemQuantity (state, product) {
+        const products = [...state.products]
+        const index = products.findIndex(p => p.id === product.id)
+        if (index > -1) {
+            products[index].pieces+=1
+            products[index]={
+                ...products[index]
+            }
+        }
+        state.products = products
     },
     deleteProduct(state, id) {
         const products = [...state.products]

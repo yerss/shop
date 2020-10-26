@@ -1,11 +1,11 @@
 <template>
   <li>
     <div class="media">
-      <a href="#">
+      <a href="javascript:void(0)">
         <img alt="" class="mr-3" :src="product.image">
       </a>
       <div class="media-body">
-        <a href="#">
+        <a href="javascript:void(0)">
           <h4>{{product.alias}}</h4>
         </a>
         <h4>

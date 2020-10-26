@@ -51,19 +51,19 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="bg-light txt-dark"><a href="#" data-original-title="" title="">All </a> notification</li>
+                            <li class="bg-light txt-dark"><a href="javascript:void(0)" data-original-title="" title="">All </a> notification</li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="right_side_toggle" data-feather="message-square"></i><span class="dot"></span></a></li>
+                    <li><a href="javascript:void(0)"><i class="right_side_toggle" data-feather="message-square"></i><span class="dot"></span></a></li>
                     <li class="onhover-dropdown">
                         <div class="media align-items-center"><img class="align-self-center pull-right img-50 rounded-circle blur-up lazyloaded" src="../../../assets/images/dashboard/man.png" alt="header-user">
                             <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
                         </div>
                         <ul class="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
-                            <li><a href="#">Profile<span class="pull-right"><i data-feather="user"></i></span></a></li>
-                            <li><a href="#">Inbox<span class="pull-right"><i data-feather="mail"></i></span></a></li>
-                            <li><a href="#">Taskboard<span class="pull-right"><i data-feather="file-text"></i></span></a></li>
-                            <li><a href="#">Settings<span class="pull-right"><i data-feather="settings"></i></span></a></li>
+                            <li><a href="javascript:void(0)">Profile<span class="pull-right"><i data-feather="user"></i></span></a></li>
+                            <li><a href="javascript:void(0)">Inbox<span class="pull-right"><i data-feather="mail"></i></span></a></li>
+                            <li><a href="javascript:void(0)">Taskboard<span class="pull-right"><i data-feather="file-text"></i></span></a></li>
+                            <li><a href="javascript:void(0)">Settings<span class="pull-right"><i data-feather="settings"></i></span></a></li>
                         </ul>
                     </li>
                 </ul>

@@ -9,8 +9,8 @@
       </div>
       <div class="row cart-buttons">
         <div class="col-12">
-          <router-link to="/shop" class="btn btn-normal">continue shopping</router-link>
-          <router-link to="/checkout" class="btn btn-normal ml-3">check out</router-link>
+          <router-link to="/shop" class="btn btn-normal">Продолжить покупки</router-link>
+          <router-link to="/checkout" class="btn btn-normal ml-3">оформить заказ</router-link>
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
                         <h4></h4>
                         <h1>Корзина ждет, что ее наполнят.</h1>
                         <router-link to="/shop">
-                          shop now
+                          Начать покупки
                           <i class="fa fa-arrow-circle-right"></i>
                         </router-link>
                       </div>

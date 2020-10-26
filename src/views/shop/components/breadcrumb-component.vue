@@ -7,9 +7,9 @@
                         <div>
                             <h2>category</h2>
                             <ul>
-                                <li><a href="#">home</a></li>
+                                <li><a href="javascript:void(0)">home</a></li>
                                 <li><i class="fa fa-angle-double-right"></i></li>
-                                <li><a href="#">{{this.name}}</a></li>
+                                <li><a href="javascript:void(0)">{{this.name}}</a></li>
                             </ul>
                         </div>
                     </div>
