@@ -4,6 +4,10 @@ import router from './router'
 import store from './store'
 require('./assets/js/bootstrap')
 require('./assets/js/slider-animat')
+require('./assets/js/bootstrap-notify.min')
+require('./assets/js/slick')
+require('./assets/js/popper.min')
+
 const feather = require('./assets/js/icons/feather-icon/feather.min')
 feather.replace()
 

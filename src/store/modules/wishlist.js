@@ -25,6 +25,7 @@ const actions = {
         commit('setProducts', data.data)
     },
     async addProduct({commit}, product) {
+
         let {
             data
         } = await wishlist.addLike(product.id)
