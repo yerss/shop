@@ -5,8 +5,8 @@
                 <div><img class="img-60 rounded-circle lazyloaded blur-up"
                           src="../../../assets/images/dashboard/man.png" alt="#">
                 </div>
-                <h6 class="mt-3 f-14">JOHN</h6>
-                <p>Ux Designer</p>
+                <h6 class="mt-3 f-14">БАХА</h6>
+                <p>Администратор</p>
             </div>
             <ul class="sidebar-menu">
                 <li><router-link class="sidebar-header" to="/admin/"><i data-feather="home"></i><span>Панель</span></router-link>
@@ -68,9 +68,9 @@
                         <li>
                             <router-link to="/admin/orders/"><i class="fa fa-circle"></i>Заказы</router-link>
                         </li>
-                        <li>
-                            <router-link to="/admin/transactions/"><i class="fa fa-circle"></i>Транзакции</router-link>
-                        </li>
+<!--                        <li>-->
+<!--                            <router-link to="/admin/transactions/"><i class="fa fa-circle"></i>Транзакции</router-link>-->
+<!--                        </li>-->
                     </ul>
                 </li>
                 <li>

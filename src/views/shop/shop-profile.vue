@@ -10,12 +10,12 @@
                         </div>
                         <div class="block-content ">
                             <ul>
-                                <li class="active"><a href="#">Account Info</a></li>
-                                <li v-if="role === 'admin'"> <router-link tag="a" to="/admin">Admin page</router-link></li>
-                                <li><router-link to="/my-orders">My Orders</router-link></li>
-                                <li><router-link to="/wishlist">My Wishlist</router-link></li>
-                                <li><router-link to="/reset-password">Reset Password</router-link></li>
-                                <li class="last pointer"><a @click="logout">Log Out</a></li>
+                                <li class="active"><a href="#">Инофрмация о аккаунте</a></li>
+                                <li v-if="role === 'admin'"> <router-link tag="a" to="/admin">Панель админа</router-link></li>
+                                <li><router-link to="/my-orders">Мои заказы</router-link></li>
+                                <li><router-link to="/wishlist">Мои избранные</router-link></li>
+                                <li><router-link to="/reset-password">Сбросить пароль</router-link></li>
+                                <li class="last pointer"><a @click="logout">Выйти</a></li>
                             </ul>
                         </div>
                     </div>
@@ -24,38 +24,29 @@
                     <div class="dashboard-right">
                         <div class="dashboard">
                             <div class="page-title">
-                                <h2>My Dashboard</h2></div>
+                                <h2>Панель</h2></div>
                             <div class="welcome-msg">
-                                <p>Hello, MARK JECNO !</p>
-                                <p>From your My Account Dashboard you have the ability to view a snapshot of your recent
-                                    account activity and update your account information. Select a link below to view or
-                                    edit information.</p>
+                                <p>Привет, {{user.name}} !</p>
+                                <p>На панели управления «Моя учетная запись» у вас есть возможность просмотреть
+                                    моментальный снимок вашей недавней активности в
+                                    учетной записи и обновить информацию о ней. Щелкните ссылку ниже,
+                                    чтобы просмотреть или изменить информацию .
+                                </p>
                             </div>
                             <div class="box-account box-info">
                                 <div class="box-head">
-                                    <h2>Account Information</h2></div>
+                                    <h2>Информация об учетной записи</h2></div>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="box">
                                             <div class="box-title">
-                                                <h3>Contact Information</h3>
+                                                <h3>Контакты</h3>
 <!--                                                <a href="#">Edit</a>-->
                                             </div>
                                             <div class="box-content">
                                                 <h6>{{user.name}}</h6>
                                                 <h6>{{user.email}}</h6>
-                                                <h6><router-link to="/reset-password">Reset Password</router-link></h6></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="box">
-                                            <div class="box-title">
-                                                <h3>Newsletters</h3>
-<!--                                                <a href="#">Edit</a>-->
-                                            </div>
-                                            <div class="box-content">
-                                                <p>You are currently not subscribed to any newsletter.</p>
-                                            </div>
+                                                <h6><router-link to="/reset-password">Сбросить пароль</router-link></h6></div>
                                         </div>
                                     </div>
                                 </div>

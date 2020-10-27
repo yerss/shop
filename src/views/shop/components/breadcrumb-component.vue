@@ -5,9 +5,9 @@
                 <div class="col">
                     <div class="breadcrumb-contain">
                         <div>
-                            <h2>category</h2>
+                            <h2>КАТЕГОРИЯ</h2>
                             <ul>
-                                <li><a href="javascript:void(0)">home</a></li>
+                                <li><a href="javascript:void(0)">ГЛАВНАЯ</a></li>
                                 <li><i class="fa fa-angle-double-right"></i></li>
                                 <li><a href="javascript:void(0)">{{this.name}}</a></li>
                             </ul>
@@ -34,22 +34,22 @@
             $route(path) {
                 switch (path.name) {
                     case 'news':
-                        this.name = 'NEWS'
+                        this.name = 'НОВОСТИ'
                         break
                     case 'categories':
-                        this.name = 'CATEGORIES'
+                        this.name = 'КАТЕГОРИИ'
                         break
                     case 'shop_catalog':
-                        this.name = 'PRODUCTS'
+                        this.name = 'ПРОДУКТЫ'
                         break
                     case 'about_us':
-                        this.name = 'ABOUT US'
+                        this.name = 'О НАС'
                         break
                     case 'profile':
-                        this.name = 'PROFILE'
+                        this.name = 'ПРОФАЙЛ'
                         break
                     case 'shop_content':
-                        this.name = ''
+                        this.name = 'КОНТЕНТ'
                         break
                 }
             }
