@@ -8,8 +8,8 @@
                             <div class="slider-banner p-center slide-banner-1">
                                 <div class="slider-img">
                                     <ul class="layout1-slide-1">
-                                        <li id="img-1"><img src="../../../assets/images/layout-2/slider/1.1.png" class="img-fluid" alt="slider"></li>
-                                        <li id="img-2" class="slide-center"><img src="../../../assets/images/layout-2/slider/1.2.png" class="img-fluid" alt="slider"></li>
+                                        <li id="img-1"><img src="../../../assets/images/layout-2/slider/1.3.png" class="img-fluid" alt="slider"></li>
+                                        <li id="img-2" class="slide-center"><img src="../../../assets/images/layout-2/slider/1.5.png" class="img-fluid" alt="slider"></li>
                                     </ul>
                                 </div>
                                 <div class="slider-banner-contain">

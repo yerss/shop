@@ -8,13 +8,22 @@
                         <div class="collection-mobile-back"><span class="filter-back">
                             <i class="fa fa-angle-left" aria-hidden="true"></i> back</span>
                         </div>
+
                         <div class="block-content ">
                             <ul>
-                                <li class="active"><a href="#">Инофрмация о аккаунте</a></li>
-                                <li v-if="role === 'admin'"> <router-link tag="a" to="/admin">Панель админа</router-link></li>
-                                <li><router-link to="/my-orders">Мои заказы</router-link></li>
-                                <li><router-link to="/wishlist">Мои избранные</router-link></li>
-                                <li><router-link to="/reset-password">Сбросить пароль</router-link></li>
+                                <li class="active"><a href="#">Аккаунт</a></li>
+                                <li v-if="role === 'admin'">
+                                    <router-link tag="a" to="/admin">Панель админа</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/my-orders">Мои заказы</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/wishlist">Мои избранные</router-link>
+                                </li>
+                                <li>
+                                    <router-link to="/reset-password">Сбросить пароль</router-link>
+                                </li>
                                 <li class="last pointer"><a @click="logout">Выйти</a></li>
                             </ul>
                         </div>
@@ -41,12 +50,15 @@
                                         <div class="box">
                                             <div class="box-title">
                                                 <h3>Контакты</h3>
-<!--                                                <a href="#">Edit</a>-->
+                                                <!--                                                <a href="#">Edit</a>-->
                                             </div>
                                             <div class="box-content">
                                                 <h6>{{user.name}}</h6>
                                                 <h6>{{user.email}}</h6>
-                                                <h6><router-link to="/reset-password">Сбросить пароль</router-link></h6></div>
+                                                <h6>
+                                                    <router-link to="/reset-password">Сбросить пароль</router-link>
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -80,34 +92,36 @@
 <script>
     import $ from 'jquery'
     import {mapGetters} from 'vuex'
+
     export default {
         name: "shop-profile",
         methods: {
           async logout() {
               this.$store.dispatch('auth/logout').then(()=>{
+                  this.$store.commit('auth/setCurrentUser', {})
                   this.$router.push('/')
               })
           }
         },
-        computed:{
+        computed: {
             ...mapGetters({
                 role: 'auth/role',
                 user: 'auth/currentUser'
             })
         },
         mounted() {
-            $('.account-sidebar').on('click', function(e) {
-                $('.dashboard-left').css("left","0");
+            $('.account-sidebar').on('click', function (e) {
+                $('.dashboard-left').css("left", "0");
             });
-            $('.filter-back').on('click', function(e) {
-                $('.dashboard-left').css("left","-365px");
+            $('.filter-back').on('click', function (e) {
+                $('.dashboard-left').css("left", "-365px");
             });
         }
     }
 </script>
 
 <style scoped>
-    .pointer{
+    .pointer {
         cursor: pointer;
     }
 </style>

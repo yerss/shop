@@ -13,6 +13,7 @@
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
     "jquery": "^3.5.1",
+    "portal-vue": "^2.1.7",
     "vue": "^2.6.12",
     "vue-router": "^3.4.3",
     "vue-yandex-maps": "^0.10.9",
