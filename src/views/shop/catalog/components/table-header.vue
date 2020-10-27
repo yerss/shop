@@ -1,6 +1,11 @@
 <template>
     <div class="product-top-filter">
         <div class="row">
+            <div class="col-xl-12">
+                <div class="filter-main-btn"><span class="filter-btn  "><i class="fa fa-filter" aria-hidden="true"></i> Filter</span></div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12">
                 <div class="product-filter-content">
                     <div class="search-count">
@@ -39,7 +44,8 @@
                 pagination: 'products/pagination'
             })
         },
-
+        mounted() {
+        }
     }
 </script>
 

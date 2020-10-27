@@ -36,6 +36,7 @@
     import TableFooter from './components/table-footer'
     import FilterComponent from './components/filter-component'
     import NewProductsComponent from './components/new-products-component'
+    import $ from 'jquery'
 
     export default {
         name: "shop-layout",
@@ -50,6 +51,15 @@
             return {
 
             }
+        },
+        mounted() {
+            $('.filter-main-btn').on('click', function(e) {
+                $('.collection-filter').css("left","-15px");
+            });
+            $('.filter-back').on('click', function(e) {
+                $('.collection-filter').css("left","-365px");
+                $('.sidebar-popup').trigger('click');
+            });
         },
         computed: {
             ...mapGetters({

@@ -8,7 +8,7 @@
             <h3 :class="['collapse-block-title', {'mt-0' : index === 0}  ]" style="border: 0px" v-b-toggle="`collapse-${index}`">
                 {{filter.name}}
             </h3>
-            <b-collapse :id="`collapse-${index}`">
+            <b-collapse :id="`collapse-${index}`" visible>
                 <div class="collection-collapse-block-content">
                     <div class="collection-brand-filter">
                         <div class="custom-control custom-checkbox collection-filter-checkbox" v-for="value in filter.filter_values">
