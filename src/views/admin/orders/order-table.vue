@@ -9,7 +9,7 @@
             </div>
             <div class="card-body">
               <div>
-                <b-table :items="items" :fields="fields" responsive="sm" hover outlined bordered>
+                <b-table :items="items" :fields="fields" responsive="sm" hover outlined bordered striped>
                   <template #cell(show_details)="row">
                     <b-form-checkbox v-model="row.detailsShowing" @change="row.toggleDetails">
                       Детали

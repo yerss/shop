@@ -7,7 +7,7 @@
                         <h5>Product List</h5>
                     </div>
                     <div class="card-body">
-                        <b-table :fields="fields" :items="items" outlined hover>
+                        <b-table :fields="fields" :items="items" outlined hover striped bordered>
                             <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
                                 <a href="javascript:void(0)">
                                     <i class="fa fa-edit crud-button"></i>

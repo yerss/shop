@@ -9,7 +9,7 @@
                 <p>Ux Designer</p>
             </div>
             <ul class="sidebar-menu">
-                <li><router-link class="sidebar-header" to="/admin/"><i data-feather="home"></i><span>Dashboard</span></router-link>
+                <li><router-link class="sidebar-header" to="/admin/"><i data-feather="home"></i><span>Панель</span></router-link>
                 </li>
                 <li>
                     <a class="sidebar-header"><i data-feather="box"></i> <span>Продукты</span><i
