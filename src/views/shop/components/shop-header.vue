@@ -143,7 +143,7 @@
                                 <div class="icon-block">
                                     <ul>
                                         <li class="mobile-user onhover-dropdown">
-                                            <router-link :to=" !isLoggedIn ? '/login' : '/profile'">
+                                            <router-link to="/profile">
                                                 <i class="icon-user"></i>
                                             </router-link>
                                         </li>

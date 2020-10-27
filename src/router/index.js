@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
+import store from '../store/index'
 const MainComponent = () => import('@/views/shop/main-layout')
 const ShopContent = () => import('@/views/shop/shop-content')
 const ShopCatalog = () => import('@/views/shop/catalog/shop-layout')
@@ -40,12 +40,29 @@ const AdminProfileSettings = () => import('@/views/admin/profile/profile-setting
 
 Vue.use(Router)
 
+const requireAuth = (to, from, next) => {
+    if (store.getters['auth/isLoggedIn']) {
+        next()
+        return
+    }
+    next('/login')
+}
+
+const requireAdmin = (to, from, next) => {
+    if (store.getters['auth/isLoggedIn'] && store.getters['auth/role']==='admin') {
+        next()
+        return
+    }
+    next('/login')
+}
+
 let router = new Router({
     mode: 'history',
     routes: [
         {
             path: '/admin',
             component: AdminMainComponent,
+            beforeEnter: requireAdmin,
             children: [
                 {
                     path: '',
@@ -187,16 +204,19 @@ let router = new Router({
                     path: 'wishlist',
                     name: 'wishlist',
                     component: ShopWishlist,
+                    beforeEnter: requireAuth
                 },
                 {
                     path: 'checkout',
                     name: 'checkout',
                     component: ShopCheckout,
+                    beforeEnter: requireAuth
                 },
                 {
                     path: 'profile',
                     name: 'profile',
-                    component: ShopProfile
+                    component: ShopProfile,
+                    beforeEnter: requireAuth
                 },
                 {
                     path: 'categories',
@@ -206,7 +226,8 @@ let router = new Router({
                 {
                     path: 'my-orders',
                     name: 'my-orders',
-                    component: MyOrders
+                    component: MyOrders,
+                    beforeEnter: requireAuth
                 },
                 {
                     path: 'reset-password',

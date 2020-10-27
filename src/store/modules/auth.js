@@ -32,7 +32,9 @@ const actions = {
             // const refresh = data.refresh
             const role = data.role.name
             localStorage.setItem('token', token)
-            localStorage.setItem('role', role)
+            if (role === 'admin'){
+                localStorage.setItem('role', role)
+            }
             // localStorage.setItem('refreshToken', refresh)
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
             commit('auth_success', {
@@ -64,6 +66,7 @@ const actions = {
         return new Promise((resolve, reject) => {
             commit('logout')
             localStorage.removeItem('token')
+            localStorage.removeItem('role')
             // localStorage.removeItem('refreshToken')
             delete axios.defaults.headers.common['Authorization']
             resolve()
