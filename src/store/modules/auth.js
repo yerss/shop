@@ -27,7 +27,6 @@ const actions = {
         commit('auth_request')
         try {
             let { data } = await auth.login(params)
-            console.log(data)
             const token = data.token
             // const refresh = data.refresh
             const role = data.role.name
@@ -44,6 +43,15 @@ const actions = {
             dispatch('getCurrentUser')
         } catch (err) {
             console.log(err)
+        }
+    },
+    async register ({commit}, params) {
+        try {
+            console.log(params)
+            let {data} = await auth.registration(params)
+            console.log(data)
+        }catch (e) {
+            console.log(e)
         }
     },
     // refreshToken ({ commit }) {

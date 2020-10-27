@@ -1,22 +1,19 @@
 <template>
-    <body>
-    <section>
-        <section class="section-big-pt-space ratio_asos bg-light">
-            <div class="collection-wrapper">
-                <div class="custom-container">
-                    <div class="row">
-                        <div class="col-sm-3 collection-filter category-page-side">
-                            <filter-component/>
-                        </div>
-                        <div class="collection-content col">
-                            <div class="page-main-content">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="collection-product-wrapper">
-                                            <table-header/>
-                                            <table-component/>
-                                            <table-footer/>
-                                        </div>
+    <section class="section-big-pt-space ratio_asos bg-light">
+        <div class="collection-wrapper">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-sm-3 collection-filter category-page-side">
+                        <filter-component/>
+                    </div>
+                    <div class="collection-content col">
+                        <div class="page-main-content">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="collection-product-wrapper">
+                                        <table-header/>
+                                        <table-component/>
+                                        <table-footer/>
                                     </div>
                                 </div>
                             </div>
@@ -24,9 +21,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </section>
-    </body>
 </template>
 
 <script>

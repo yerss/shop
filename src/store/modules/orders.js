@@ -7,7 +7,8 @@ Vue.use(Vuex)
 const state = () => ({
     selected: {},
     list: [],
-    pagination: {}
+    pagination: {},
+    success_order: {}
 })
 
 const getters = {
@@ -19,6 +20,9 @@ const getters = {
     },
     pagination: state => {
         return state.pagination
+    },
+    success_order: state => {
+        return state.success_order
     }
 }
 
@@ -81,6 +85,9 @@ const mutations = {
     },
     setPagination(state, data) {
         state.pagination = data
+    },
+    setSuccessOrder(state, data) {
+        state.success_order = data
     }
 }
 

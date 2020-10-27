@@ -174,6 +174,8 @@
                         currency_id: 1,
                         address_id: data.id,
                         products: this.products
+                    }).then((data) => {
+                        console.log(data)
                     })
                 })
             }
