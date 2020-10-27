@@ -24,6 +24,12 @@
                                 </div>
                             </template>
                         </b-table>
+                        <b-pagination
+                                v-model="currentPage"
+                                :total-rows="pagination.total"
+                                :per-page="pagination.per_page"
+                                aria-controls="my-table"
+                        ></b-pagination>
                     </div>
                 </div>
             </div>
@@ -37,6 +43,7 @@
         name: "product-table",
         data () {
             return {
+                currentPage: 1,
                 items: [],
                 fields: [
                     {
@@ -85,6 +92,7 @@
         },
         computed: {
             ...mapGetters({
+                pagination: 'products/pagination',
                 products: 'products/products'
             })
         },
@@ -97,6 +105,11 @@
         watch:{
             products (val) {
                 this.items = val
+            },
+            currentPage(val){
+                this.getProducts({
+                    page: val
+                })
             }
         }
     }

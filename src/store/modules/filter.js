@@ -8,7 +8,9 @@ const state = () => ({
     selected_group: {},
     selected_value: {},
     list_group: [],
-    list_value: []
+    list_value: [],
+    pagination_v: {},
+    pagination_g: {}
 })
 
 const getters = {
@@ -23,25 +25,33 @@ const getters = {
     },
     filterValue: state => {
         return state.selected_value
+    },
+    paginationV: state => {
+        return state.pagination_v
+    },
+    paginationG: state => {
+        return state.pagination_g
     }
 }
 
 const actions = {
     async getFilterGroups({
         commit
-    }) {
+    }, params) {
         let {
             data
-        } = await filter.getFilterGroups()
+        } = await filter.getFilterGroups(params)
         commit('setFilterGroups', data.data)
+        commit('setPaginationG', data.meta)
     },
     async getFilterValues({
         commit
-    }) {
+    }, params) {
         let {
             data
-        } = await filter.getFilterValues()
+        } = await filter.getFilterValues(params)
         commit('setFilterValues', data.data)
+        commit('setPaginationV', data.meta)
     },
     async addFilterGroup({commit}, filterGroup){
         let {
@@ -139,6 +149,12 @@ const mutations = {
             filterValues.splice(index, 1)
         }
         state.list_value = filterValues
+    },
+    setPaginationV (state, data) {
+        state.pagination_v = data
+    },
+    setPaginationG (state, data) {
+        state.pagination_g = data
     }
 }
 

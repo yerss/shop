@@ -3,12 +3,12 @@
     <table class="table cart-table table-responsive-xs">
       <thead>
       <tr class="table-head">
-        <th scope="col">image</th>
-        <th scope="col">product name</th>
-        <th scope="col">price</th>
-        <th scope="col">quantity</th>
-        <th scope="col">action</th>
-        <th scope="col">total</th>
+        <th scope="col"></th>
+        <th scope="col">Наименование</th>
+        <th scope="col">Цена</th>
+        <th scope="col">Количество</th>
+        <th scope="col">Действие</th>
+        <th scope="col">Сумма</th>
       </tr>
       </thead>
       <product-component
@@ -20,7 +20,7 @@
     <table class="table cart-table table-responsive-md">
       <tfoot>
       <tr>
-        <td>total price :</td>
+        <td>Сумма :</td>
         <td>
           <h2>$ {{ total }}</h2></td>
       </tr>

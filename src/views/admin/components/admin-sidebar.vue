@@ -22,12 +22,6 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/admin/sub-categories">
-                                <i class="fa fa-circle"></i>
-                                Под категории
-                            </router-link>
-                        </li>
-                        <li>
                             <router-link to="/admin/products/">
                                 <i class="fa fa-circle"></i>
                                 Лист продуктов

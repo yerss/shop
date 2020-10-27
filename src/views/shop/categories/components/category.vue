@@ -22,6 +22,7 @@
                 if (this.category.categories.length>=1) {
                     this.$store.commit('categories/setCategories', this.category.categories)
                 }else {
+                    
                 }
             }
 

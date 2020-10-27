@@ -30,6 +30,13 @@
                                     </div>
                                 </template>
                             </b-table>
+                            <b-pagination
+                                    v-model="currentPage"
+                                    :total-rows="pagination.total"
+                                    :per-page="pagination.per_page"
+                            >
+
+                            </b-pagination>
                         </div>
                     </div>
                 </div>
@@ -46,22 +53,13 @@
         components: {AddressForm},
         data () {
             return {
+                currentPage: 1,
                 isBusy: true,
                 items: [],
                 fields: [
                     {
                         key: "id",
                         label: 'ID',
-                        sortable: true
-                    },
-                    {
-                        key: "city.name",
-                        label: 'Город',
-                        sortable: true
-                    },
-                    {
-                        key: "zip_code",
-                        label: 'ZIP код',
                         sortable: true
                     },
                     {
@@ -87,8 +85,16 @@
                 ]
             }
         },
+        watch:{
+            currentPage(val){
+                this.getAddress({
+                    page: val
+                })
+            }
+        },
         async created() {
             await this.getAddress().finally(()=>{
+                this.currentPage = this.pagination.current_page
                 this.getCities()
                 this.items = this.addresses
                 this.isBusy = false
@@ -103,6 +109,7 @@
         },
         computed: {
             ...mapGetters({
+                pagination: 'addresses/pagination',
                 addresses: 'addresses/addresses'
             })
         }

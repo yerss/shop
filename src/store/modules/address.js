@@ -29,11 +29,12 @@ const getters = {
 const actions = {
     async getAddresses({
         commit
-    }){
+    }, params){
         let {
             data
-        } = await addresses.getAddresses()
+        } = await addresses.getAddresses(params)
         commit('setAddresses', data.data)
+        commit('setPagination', data.meta)
     },
 
     async addAddress({commit}, address) {

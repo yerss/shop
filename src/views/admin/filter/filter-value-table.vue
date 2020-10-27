@@ -37,6 +37,12 @@
                                     </div>
                                 </template>
                             </b-table>
+                            <b-pagination
+                                    v-model="currentPage"
+                                    :total-rows="pagination.total"
+                                    :per-page="pagination.per_page"
+                                    aria-controls="my-table"
+                            ></b-pagination>
                         </div>
                     </div>
                 </div>
@@ -54,6 +60,7 @@
         components: {FilterValueForm},
         data () {
             return {
+                currentPage: 1,
                 isBusy: true,
                 items: [],
                 fields: [
@@ -89,7 +96,8 @@
         },
         computed: {
             ...mapGetters({
-                filters: 'filters/filterValues'
+                filters: 'filters/filterValues',
+                pagination: 'filters/paginationV'
             })
         },
         methods: {
@@ -115,6 +123,11 @@
         watch: {
             filters(val){
                 this.items = val
+            },
+            currentPage(val){
+                this.getFilterValues({
+                    page: val
+                })
             }
         }
     }

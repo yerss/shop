@@ -9,7 +9,7 @@
           <h4>{{product.alias}}</h4>
         </a>
         <h4>
-          <span>{{product.pieces}} x $ {{product.price}}</span>
+          <span>$ {{product.price}}</span>
         </h4>
       </div>
     </div>

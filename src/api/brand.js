@@ -3,9 +3,9 @@ import axios from 'axios'
 const brands = {
     api: 'http://localhost:8000/api',
 
-    getBrands () {
+    getBrands (params) {
         const url = '/brands/'
-        return axios.get(this.api + url, {})
+        return axios.get(this.api + url, {params})
     },
     addBrand (brand) {
         const url = `/brands/`

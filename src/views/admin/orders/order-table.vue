@@ -31,6 +31,12 @@
                     </div>
                   </template>
                 </b-table>
+                <b-pagination
+                        v-model="currentPage"
+                        :total-rows="pagination.total"
+                        :per-page="pagination.per_page"
+                        aria-controls="my-table"
+                ></b-pagination>
               </div>
             </div>
           </div>
@@ -49,6 +55,7 @@ export default {
   components: {OrderForm},
   data() {
     return {
+      currentPage: 1,
       isBusy: true,
       items: [],
       fields: [
@@ -109,6 +116,11 @@ export default {
     orders(val) {
       this.items = val
       this.isBusy = false
+    },
+    currentPage(val){
+      this.getOrders({
+        page: val
+      })
     }
   },
   created() {
@@ -119,7 +131,8 @@ export default {
   },
   computed: {
     ...mapGetters({
-      orders: 'orders/orders'
+      orders: 'orders/orders',
+      pagination: 'orders/pagination'
     })
   },
   methods: {

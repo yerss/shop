@@ -4,9 +4,9 @@ import axios from 'axios'
 const orders =  {
     api: 'http://localhost:8000/api',
 
-    getOrders () {
+    getOrders (params) {
         const url = '/orders/'
-        return axios.get(this.api + url, {})
+        return axios.get(this.api + url, {params})
     },
     addOrder(order) {
         const url = `/orders/`

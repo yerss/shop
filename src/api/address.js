@@ -4,9 +4,9 @@ import axios from 'axios'
 const addresses =  {
     api: 'http://localhost:8000/api',
 
-    getAddresses () {
+    getAddresses (params) {
         const url = '/addresses/'
-        return axios.get(this.api + url, {})
+        return axios.get(this.api + url, {params})
     },
     addAddress(address) {
         const url = `/addresses/`

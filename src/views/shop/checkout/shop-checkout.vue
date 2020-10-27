@@ -132,7 +132,11 @@
         data() {
             return {
                 delivery: false,
-                order: {}
+                order: {
+                    name: '',
+                    surname: '',
+                    email: '',
+                }
             }
         },
         computed: {
@@ -146,6 +150,12 @@
                     return accumulator + (currentValue.pieces * currentValue.price)
                 }, 0))
             }
+        },
+        mounted() {
+
+            this.order.email = this.user.email
+            this.order.surname = this.user.name.split(' ', 1)
+            this.order.name = this.user.name.split(' ', 2)
         },
         methods: {
             ...mapActions({

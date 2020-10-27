@@ -20,8 +20,9 @@
                             <filter-group-form/>
                         </div>
                         <div class="table-responsive">
-                            <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined striped bordered>
-                                <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
+                            <b-table :fields="fields" :items="items" :busy="isBusy" hover outlined striped bordered>
+                                <template v-slot:cell(actions)="row"
+                                          style="display: flex; justify-content: space-between; align-content: center">
                                     <a href="javascript:void(0)" @click="editFilter(row.item)">
                                         <i class="fa fa-edit crud-button"></i>
                                     </a>
@@ -37,6 +38,12 @@
                                     </div>
                                 </template>
                             </b-table>
+                            <b-pagination
+                                    v-model="currentPage"
+                                    :total-rows="pagination.total"
+                                    :per-page="pagination.per_page"
+                                    aria-controls="my-table"
+                            ></b-pagination>
                         </div>
                     </div>
                 </div>
@@ -49,11 +56,13 @@
     import $ from 'jquery'
     import {mapGetters, mapActions} from 'vuex'
     import FilterGroupForm from "./filter-group-form";
+
     export default {
         name: "filter-group-table",
         components: {FilterGroupForm},
-        data () {
+        data() {
             return {
+                currentPage: 1,
                 isBusy: true,
                 items: [],
                 fields: [
@@ -76,13 +85,19 @@
             }
         },
         watch: {
-          filters(val){
-              this.items = val
-          }
+            filters(val) {
+                this.items = val
+            },
+            currentPage(val) {
+                this.getFilterGroups({
+                    page: val
+                })
+            }
         },
         computed: {
             ...mapGetters({
-                filters: 'filters/filterGroups'
+                filters: 'filters/filterGroups',
+                pagination: 'filters/paginationG'
             })
         },
         methods: {
@@ -95,13 +110,13 @@
                 this.$store.commit('setEditState', false)
                 this.$store.commit('setAddState', true)
             },
-            editFilter(item){
+            editFilter(item) {
                 this.$store.commit('setAddState', false)
                 this.$store.commit('setEditState', true)
                 this.$store.commit('filters/setFilterGroup', item)
                 $('#filterGroupModal').modal('show')
             },
-            deleteItem (item) {
+            deleteItem(item) {
                 this.deleteFilterGroup(item.id)
             }
         },

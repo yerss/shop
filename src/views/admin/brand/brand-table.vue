@@ -8,13 +8,16 @@
                     </div>
                     <div class="card-body">
                         <div class="btn-popup pull-right">
-                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-original-title="test" data-target="#brandModal">Добавить</button>
+                            <button type="button" class="btn btn-secondary" data-toggle="modal"
+                                    data-original-title="test" data-target="#brandModal">Добавить
+                            </button>
                             <brand-form/>
                         </div>
                         <div class="table-responsive">
 
-                            <b-table :fields="fields"  :items="items" :busy="isBusy" hover outlined>
-                                <template v-slot:cell(actions)="row" style="display: flex; justify-content: space-between; align-content: center">
+                            <b-table :fields="fields" :items="items" :busy="isBusy" hover outlined>
+                                <template v-slot:cell(actions)="row"
+                                          style="display: flex; justify-content: space-between; align-content: center">
                                     <a>
                                         <i class="fa fa-edit crud-button"></i>
                                     </a>
@@ -30,6 +33,12 @@
                                     </div>
                                 </template>
                             </b-table>
+                            <b-pagination
+                                    v-model="currentPage"
+                                    :total-rows="pagination.total"
+                                    :per-page="pagination.per_page"
+                                    aria-controls="my-table"
+                            ></b-pagination>
                         </div>
                     </div>
                 </div>
@@ -42,11 +51,13 @@
 <script>
     import {mapActions, mapGetters} from 'vuex'
     import BrandForm from "./brand-form";
+
     export default {
         name: "brand-table",
         components: {BrandForm},
-        data () {
+        data() {
             return {
+                currentPage: 1,
                 isBusy: true,
                 items: [],
                 fields: [
@@ -83,11 +94,16 @@
                 ]
             }
         },
-      watch:{
-        brands (val) {
-          this.items = val
-        }
-      },
+        watch: {
+            brands(val) {
+                this.items = val
+            },
+            currentPage (val) {
+                this.getBrands({
+                    page: val
+                })
+            }
+        },
         mounted() {
             this.getBrands().finally(() => {
                 this.items = this.brands
@@ -96,6 +112,7 @@
         },
         computed: {
             ...mapGetters({
+                pagination: 'brands/pagination',
                 brands: 'brands/brands'
             })
         },

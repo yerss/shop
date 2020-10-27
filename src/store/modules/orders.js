@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 const state = () => ({
     selected: {},
-    list: []
+    list: [],
+    pagination: {}
 })
 
 const getters = {
@@ -15,15 +16,19 @@ const getters = {
     },
     orders: state => {
         return state.list
+    },
+    pagination: state => {
+        return state.pagination
     }
 }
 
 const actions = {
-    async getOrders({ commit }) {
+    async getOrders({ commit }, params) {
         let {
             data
-        } = await orders.getOrders()
+        } = await orders.getOrders(params)
         commit('setOrders', data.data)
+        commit('setPagination', data.meta)
     },
 
     async addOrder({commit}, order) {
@@ -73,6 +78,9 @@ const mutations = {
             orders.splice(index, 1)
         }
         state.list = orders
+    },
+    setPagination(state, data) {
+        state.pagination = data
     }
 }
 

@@ -3,9 +3,9 @@ import axios from 'axios'
 const filter = {
     api: 'http://localhost:8000/api',
 
-    getFilterGroups () {
+    getFilterGroups (params) {
         const url = '/filterGroups/'
-        return axios.get(this.api + url, {})
+        return axios.get(this.api + url, {params})
     },
     addFilterGroup (filterGroup) {
         const url = `/filterGroups/`
@@ -28,9 +28,9 @@ const filter = {
         return axios.delete(this.api + url)
     },
 
-    getFilterValues () {
+    getFilterValues (params) {
         const url = '/filterValues/'
-        return axios.get(this.api + url, {})
+        return axios.get(this.api + url, {params})
     },
     addFilterValue (filterValue) {
         const url = `/filterValues/`

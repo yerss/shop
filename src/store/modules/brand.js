@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 const state = () => ({
     selected: {},
-    list: []
+    list: [],
+    pagination: {}
 })
 
 const getters = {
@@ -15,17 +16,21 @@ const getters = {
     },
     brands: state => {
         return state.list
+    },
+    pagination: state => {
+        return state.pagination
     }
 }
 
 const actions = {
     async getBrands({
       commit
-    }){
+    }, params){
         let {
             data
-        } = await brands.getBrands()
+        } = await brands.getBrands(params)
         commit('setBrands', data.data)
+        commit('setPagination', data.meta)
     },
 
     async addBrand({commit}, brand) {
@@ -75,6 +80,10 @@ const mutations = {
             brands.splice(index, 1)
         }
         state.list = brands
+    },
+
+    setPagination(state, data) {
+        state.pagination = data
     }
 }
 

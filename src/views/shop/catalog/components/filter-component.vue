@@ -1,10 +1,13 @@
 <template>
     <div class="collection-filter-block creative-card creative-inner category-side">
         <!-- brand filter start -->
-        <div class="collection-mobile-back"><span class="filter-back"><i class="fa fa-angle-left"
-                                                                         aria-hidden="true"></i> back</span></div>
+        <div class="collection-mobile-back"><span class="filter-back">
+            <i class="fa fa-angle-left" aria-hidden="true"></i> back</span>
+        </div>
         <div class="collection-collapse-block open" v-for="(filter, index) in filters">
-            <h3 :class="['collapse-block-title', {'mt-0' : index === 0}  ]" style="border: 0px" v-b-toggle="`collapse-${index}`">{{filter.name}}</h3>
+            <h3 :class="['collapse-block-title', {'mt-0' : index === 0}  ]" style="border: 0px" v-b-toggle="`collapse-${index}`">
+                {{filter.name}}
+            </h3>
             <b-collapse :id="`collapse-${index}`">
                 <div class="collection-collapse-block-content">
                     <div class="collection-brand-filter">
