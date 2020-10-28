@@ -19,7 +19,7 @@ const  getters = {
 }
 
 const actions = {
-    async addProducts(products) {
+    async addProducts({commit}, products) {
         let {
             data
         } = await delivery.addProducts(products)

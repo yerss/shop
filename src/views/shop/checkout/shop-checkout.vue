@@ -160,7 +160,8 @@
         methods: {
             ...mapActions({
                 addAddress: 'addresses/addAddress',
-                addOrder: 'orders/addOrder'
+                addOrder: 'orders/addOrder',
+                deliveryProducts: 'delivery/addProducts'
             }),
             doOrder() {
                 this.addAddress({
@@ -175,10 +176,47 @@
                         address_id: data.id,
                         products: this.products
                     }).then((data) => {
+                        console.log(data.data.id)
                         // 0: 43.235213211475525
                         // 1: 76.9099650424804
                         // Казахстан, Алматы, улица Манаса, 34А
+                        let deliveryProducts = []
+                        let today = new Date();
+                        let dd = String(today.getDate()).padStart(2, '0');
+                        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                        let yyyy = today.getFullYear();
 
+                        let tomorrow = new Date();
+                        tomorrow.setDate(new Date().getDate()+1);
+                        let ddt = String(today.getDate()).padStart(2, '0');
+                        let mmt = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                        let yyyyt = today.getFullYear();
+                        today = yyyy + '-' + mm + '-' + dd ;
+                        tomorrow = yyyyt + '-' + mmt + '-' + ddt ;
+                        for (let i=0; i< this.products.length; i++) {
+                            deliveryProducts.push({
+                                name: this.products[i].name,
+                                volume: this.products[i].volume,
+                                weight: this.products[i].weight,
+                                longitudeFrom: 43.235213211475525,
+                                latitudeFrom: 76.9099650424804,
+                                longitudeTo: this.addressTo.to[0],
+                                latitudeTo: this.addressTo.to[1],
+                                from_address: 'Казахстан, Алматы, улица Манаса, 34А',
+                                to_address: this.addressTo.name,
+                                currency: 'KZT',
+                                price: this.products[i].pieces*this.products[i].price,
+                                description: 'Нет',
+                                ext_order_id: data.data.id,
+                                extra_info: 'Нет',
+                                shipment_date_from: today,
+                                shipment_date_to:tomorrow,
+                            })
+                        }
+                        this.deliveryProducts({
+                            email: 'admin@admin.com',
+                            products: deliveryProducts
+                        })
                     })
                 })
             }

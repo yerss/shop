@@ -40,6 +40,7 @@ const actions = {
             data
         } = await orders.addOrder(order)
         commit('addOrder', data.data)
+        return data
     },
 
     async editOrder({commit}, order) {
