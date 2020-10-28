@@ -49,7 +49,6 @@ const actions = {
         try {
             console.log(params)
             let {data} = await auth.registration(params)
-            console.log(data)
         }catch (e) {
             console.log(e)
         }
@@ -86,6 +85,13 @@ const actions = {
             commit('setCurrentUser', res.data.data)
         } catch (e) {
             console.error(e.message)
+        }
+    },
+    async forgetPassword ({commit}, params) {
+        try {
+            const res = await auth.resetPassword(params)
+        } catch (e) {
+            console.log(e)
         }
     }
 }

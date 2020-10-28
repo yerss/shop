@@ -20,8 +20,6 @@
                     <b-card>
                       <b-table :fields="detail_fields" :items="row.item.products" bordered outlined hover small>
                       </b-table>
-
-                      <b-button size="sm" @click="row.toggleDetails">Hide Details</b-button>
                     </b-card>
                   </template>
                   <template v-slot:table-busy>
@@ -85,7 +83,8 @@ export default {
         //     sortable: true
         // },
         {
-          key: 'show_details'
+          key: 'show_details',
+          label: ''
         }
       ],
       detail_fields: [

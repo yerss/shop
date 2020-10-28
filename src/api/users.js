@@ -31,6 +31,10 @@ const users = {
         const url = `/users/${id}/`
         return axios.delete(this.api + url)
     },
+    getUserOrders () {
+        const url = '/users/orders/'
+        return axios.get(this.api + url, {})
+    }
 }
 
 export default users

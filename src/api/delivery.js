@@ -4,28 +4,24 @@ import axios from 'axios'
 const products =  {
     api: 'http://localhost:8001/api',
 
-    getProducts () {
-        const url = '/products/'
-        return axios.get(this.api + url, {})
-    },
     addProducts(products) {
-        const url = `/products/`
+        const url = `/shop/save-products/`
         return axios.post(this.api + url, products)
     },
-    getProduct (id) {
-        const url = `/products/${id}`
+    getDrivers() {
+        const url = '/shop/get-riders'
         return axios.get(this.api + url, {})
     },
-    editProduct (id, product) {
-        const url = `/products/${id}`
-        return axios.put(this.api + url, {
-            ...product
+    addDriver (driver) {
+        const url = '/shop/create-rider/'
+        return axios.post(this.api + url, {
+            driver
         })
     },
-    deleteProduct (id) {
-        const url = `/products/${id}/`
+    deleteRider (id) {
+        const url = `/shop/delete-rider/${id}/`
         return axios.delete(this.api + url)
-    },
+    }
 }
 
 export default products

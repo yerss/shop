@@ -3,137 +3,106 @@
         <div class="custom-container">
             <div class="row">
                 <div class="col-sm-12">
-                    <table class="table cart-table table-responsive-xs">
-                        <thead>
-                        <tr class="table-head">
-                            <th scope="col">product</th>
-                            <th scope="col">description</th>
-                            <th scope="col">price</th>
-                            <th scope="col">detail</th>
-                            <th scope="col">status</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <a href="javascript:void(0)"><img src="../../../assets/images/product-sidebar/001.jpg" alt="product" class="img-fluid  "></a>
-                            </td>
-                            <td><a href="#">order no: <span class="dark-data">15454841</span> <br>cotton shirt</a>
-                                <div class="mobile-cart-content row">
-                                    <div class="col-xs-3">
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                                <input type="text" name="quantity" class="form-control input-number" value="1">
-                                            </div>
-                                        </div>
+                    <b-table :items="items" :fields="fields" responsive="sm" hover outlined bordered striped>
+                                <template #cell(show_details)="row">
+                                    <b-form-checkbox v-model="row.detailsShowing" @change="row.toggleDetails">
+                                        Детали
+                                    </b-form-checkbox>
+                                </template>
+
+                                <template #row-details="row">
+                                    <b-card>
+                                        <b-table :fields="detail_fields" :items="row.item.products" bordered outlined hover small>
+                                        </b-table>
+                                    </b-card>
+                                </template>
+                                <template v-slot:table-busy>
+                                    <div class="text-center text-danger my-2">
+                                        <b-spinner class="align-middle"></b-spinner>
+                                        <strong>Loading...</strong>
                                     </div>
-                                    <div class="col-xs-3">
-                                        <h4 class="td-color">$63.00</h4></div>
-                                    <div class="col-xs-3">
-                                        <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
-                                </div>
-                            </td>
-                            <td>
-                                <h4>$63.00</h4></td>
-                            <td>
-                                <span>Size: L</span>
-                                <br>
-                                <span>Quntity: 1</span>
-                            </td>
-                            <td>
-                                <div class="responsive-data">
-                                    <h4 class="price">$63.00</h4>
-                                    <span>Size: L</span>|<span>Quntity: 1</span>
-                                </div>
-                                <span class="dark-data">Delivered</span> (jul 01, 2019)
-                            </td>
-                        </tr>
-                        </tbody>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <a href="#"><img src="../../../assets/images/product-sidebar/002.jpg" alt="product" class="  img-fluid"></a>
-                            </td>
-                            <td><a href="#">order no: <span class="dark-data">15454841</span> <br>cotton shirt</a>
-                                <div class="mobile-cart-content row">
-                                    <div class="col-xs-3">
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                                <input type="text" name="quantity" class="form-control input-number" value="1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-3">
-                                        <h4 class="td-color">$63.00</h4></div>
-                                    <div class="col-xs-3">
-                                        <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
-                                </div>
-                            </td>
-                            <td>
-                                <h4>$63.00</h4></td>
-                            <td>
-                                <span>Size: L</span>
-                                <br>
-                                <span>Quntity: 1</span>
-                            </td>
-                            <td>
-                                <div class="responsive-data">
-                                    <h4 class="price">$63.00</h4>
-                                    <span>Size: L</span>|<span>Quntity: 1</span>
-                                </div>
-                                <span class="dark-data">Delivered</span> (jul 01, 2019)
-                            </td>
-                        </tr>
-                        </tbody>
-                        <tbody>
-                        <tr>
-                            <td>
-                                <a href="#"><img src="../../../assets/images/product-sidebar/001.jpg" alt="product" class="  img-fluid"></a>
-                            </td>
-                            <td><a href="#">order no: <span class="dark-data">15454841</span> <br>cotton shirt</a>
-                                <div class="mobile-cart-content row">
-                                    <div class="col-xs-3">
-                                        <div class="qty-box">
-                                            <div class="input-group">
-                                                <input type="text" name="quantity" class="form-control input-number" value="1">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-3">
-                                        <h4 class="td-color">$63.00</h4></div>
-                                    <div class="col-xs-3">
-                                        <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
-                                </div>
-                            </td>
-                            <td>
-                                <h4>$63.00</h4></td>
-                            <td>
-                                <span>Size: L</span>
-                                <br>
-                                <span>Quntity: 1</span>
-                            </td>
-                            <td>
-                                <div class="responsive-data">
-                                    <h4 class="price">$63.00</h4>
-                                    <span>Size: L</span>|<span>Quntity: 1</span>
-                                </div>
-                                <span class="dark-data">Delivered</span> (jul 01, 2019)
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+                                </template>
+                            </b-table>
                 </div>
-            </div>
-            <div class="row cart-buttons">
-                <div class="col-12 pull-right"><a href="#" class="btn btn-normal btn-sm">show all orders</a></div>
             </div>
         </div>
     </section>
 </template>
 
 <script>
+    import {mapActions, mapGetters} from 'vuex'
     export default {
-        name: "order-history"
+        name: "order-history",
+        data () {
+            return {
+                isBusy: true,
+                items: [],
+                fields: [
+                    {
+                        key: "id",
+                        label: 'ID',
+                        sortable: true
+                    },
+                    {
+                        key: "address.address",
+                        label: 'Адрес доставки',
+                        sortable: true
+                    },
+                    {
+                        key: "status",
+                        label: 'Статус заказа',
+                        sortable: true
+                    },
+                    // {
+                    //     key: "actions",
+                    //     label: 'Действия',
+                    //     sortable: true
+                    // },
+                    {
+                        key: 'show_details',
+                        label: ''
+                    }
+                ],
+                detail_fields: [
+                    {
+                        key: "id",
+                        label: 'ID',
+                        sortable: true
+                    },
+                    {
+                        key: "alias",
+                        label: 'Наименование',
+                        sortable: true
+                    },
+                    {
+                        key: "pivot.pieces",
+                        label: 'Количество',
+                        sortable: true
+                    },
+                    {
+                        key: "pivot.price",
+                        label: 'Цена',
+                        sortable: true
+                    },
+                ]
+            }
+        },
+        computed: {
+            ...mapGetters({
+                orders: 'users/orders'
+            })
+        },
+        methods: {
+            ...mapActions({
+                getUserOrders: 'users/getUserOrders'
+            })
+        },
+        mounted () {
+            this.getUserOrders().finally(() => {
+                this.items = this.orders
+                this.isBusy = false
+            })
+        }
     }
 </script>
 
