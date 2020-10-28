@@ -172,6 +172,8 @@
                 addProduct: 'products/addProduct'
             }),
             add() {
+                this.product.weight = 1
+                this.product.volume = 1
                 this.product.pieces_left = 1
                 this.product.status = this.status ? '1' : '0'
                 let formData = new FormData()
