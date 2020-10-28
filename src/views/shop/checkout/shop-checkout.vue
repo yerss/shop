@@ -110,7 +110,8 @@
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="text-right"><a class="btn-normal btn" @click="doOrder">Оформить заказ</a></div>
+                                        <div class="text-right"><a class="btn-normal btn" @click="doOrder">Оформить
+                                            заказ</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -161,12 +162,12 @@
                 addAddress: 'addresses/addAddress',
                 addOrder: 'orders/addOrder'
             }),
-            doOrder () {
+            doOrder() {
                 this.addAddress({
                     address: this.addressTo.name,
                     full_name: `${this.order.surname} ${this.order.name}`,
                     telephone_number: this.order.phone
-                }).then((data)=>{
+                }).then((data) => {
                     this.addOrder({
                         user_id: this.user.id,
                         status: '0',
@@ -174,8 +175,8 @@
                         address_id: data.id,
                         products: this.products
                     }).then((data) => {
-                    // 0: 43.235213211475525
-                    // 1: 76.9099650424804
+                        // 0: 43.235213211475525
+                        // 1: 76.9099650424804
                         // Казахстан, Алматы, улица Манаса, 34А
 
                     })
