@@ -36,6 +36,7 @@ const AdminReports = () => import('@/views/admin/reports/reports')
 const AdminUserTable = () => import('@/views/admin/user/user-table')
 const AdminAddUser = () => import('@/views/admin/user/user-form')
 const AdminProfileSettings = () => import('@/views/admin/profile/profile-settings')
+const AdminDriversTable = () => import('@/views/admin/delivery/drivers-table')
 
 
 Vue.use(Router)
@@ -154,6 +155,12 @@ let router = new Router({
                     name: 'add-user',
                     component: AdminAddUser
                 },
+                {
+                    path: 'drivers',
+                    name: 'drivers',
+                    component: AdminDriversTable
+
+                }
             ]
         },
         {

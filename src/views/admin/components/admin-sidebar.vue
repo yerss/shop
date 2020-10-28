@@ -35,6 +35,23 @@
                         </li>
                     </ul>
                 </li>
+                <li><a class="sidebar-header"><i data-feather="truck"></i><span>Доставка</span><i
+                        class="fa fa-angle-right pull-right"></i></a>
+                    <ul class="sidebar-submenu">
+                        <li>
+                            <router-link to="/admin/drivers">
+                                <i class="fa fa-circle"></i>
+                                Водители
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/admin/delivery_orders">
+                                <i class="fa fa-circle"></i>
+                                Заказы
+                            </router-link>
+                        </li>
+                    </ul>
+                </li>
                 <li><a class="sidebar-header"><i data-feather="filter"></i><span>Фильтры</span><i
                         class="fa fa-angle-right pull-right"></i></a>
                     <ul class="sidebar-submenu">

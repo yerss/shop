@@ -35,8 +35,8 @@
                                                    v-model="order.email"
                                             >
                                         </div>
-                                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                            <input type="checkbox" name="shipping-option" id="account-option"> &ensp;
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12" v-if="!user">
+                                            <input type="checkbox" name="shipping-option" id="account-option">
                                             <label for="account-option">Создать аккаунт?</label>
                                         </div>
                                     </div>
@@ -152,7 +152,6 @@
             }
         },
         mounted() {
-
             this.order.email = this.user.email
             this.order.surname = this.user.name.split(' ', 1)
             this.order.name = this.user.name.split(' ', 2)
@@ -175,7 +174,10 @@
                         address_id: data.id,
                         products: this.products
                     }).then((data) => {
-                        console.log(data)
+                    // 0: 43.235213211475525
+                    // 1: 76.9099650424804
+                        // Казахстан, Алматы, улица Манаса, 34А
+
                     })
                 })
             }

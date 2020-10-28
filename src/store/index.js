@@ -14,7 +14,7 @@ import addresses from './modules/address'
 import brands from './modules/brand'
 import users from './modules/user'
 import orders from './modules/orders'
-
+import delivery from './modules/delivery'
 Vue.use(Vuex)
 axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`
 
@@ -44,6 +44,6 @@ export default new Vuex.Store({
         }
     },
     modules: {
-        products, cart, wishlist, categories, auth, filters, regions, cities, addresses, brands, users, orders
+        products, cart, wishlist, categories, auth, filters, regions, cities, addresses, brands, users, orders, delivery
     }
 })
